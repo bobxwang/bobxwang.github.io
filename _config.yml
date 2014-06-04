@@ -1,0 +1,8 @@
+markdown: rdiscount
+permalink: /:categories/:title/
+url: http://www.hiwangxiang.appspot.com/
+author: bob 
+safe: true
+paginate: 16
+LANG: en_US.UTF-8
+LC_ALL: en_US.UTF-8

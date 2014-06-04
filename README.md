@@ -1,4 +1,1 @@
-sevenz.github.io
-================
-
-a blog to record something 
+王相的博客
