@@ -3,7 +3,7 @@ layout: post
 title:  "谈谈C/S跟B/S系统开发中各自的关注点"
 date:   2012-07-26 16:17:59
 categories: 
-- 程序人生 
+- Programmer-life 
 tags:
 - Code
 
