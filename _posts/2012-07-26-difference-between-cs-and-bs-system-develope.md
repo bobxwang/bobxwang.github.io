@@ -3,11 +3,10 @@ layout: post
 title:  "谈谈C/S跟B/S系统开发中各自的关注点"
 date:   2012-07-26 16:17:59
 categories: 
-- Programmer-life 
+- programmer-life 
 tags:
-- Code
+- programmer-life
 
-C/S跟B/S系统开发中各自的关注点
 ---
 
 何为B/S系统，个人理解就是用浏览器打开的应用都可以称之为B/S系统，常见的就是一些网站了。
