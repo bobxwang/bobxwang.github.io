@@ -11,7 +11,7 @@ tags:
 ---
 Django中的Model层，负责的是跟数据库表间的映射，同是也是一个ORM。数据库表间关系无非三种，Django中都做了很好的支持。下面是三个模型，我们从这入手。
 
-<pre class='prettyprint'>class Publisher(models.Model):
+<pre>class Publisher(models.Model):
     name = models.CharField(max_length=30)
     website = models.URLField()
 
@@ -47,7 +47,7 @@ ModelAdmin
 ---
 光有Model还不行，Django最值得称道的就是它的后台管理，如果我们想要这些Model出现在后台管理中，我们需要在我们的app中进行注册，添加一个admin.py，写上如下代码：
 
-<pre class='prettyprint'>class BookAdmin(admin.ModelAdmin):
+<pre>class BookAdmin(admin.ModelAdmin):
     ordering = ["-publication_date"]
     list_display = ("title", "publisher","publication_date",)
     search_fields = ("title",)
@@ -68,7 +68,7 @@ Model Manager
 ---
 管理器是Django查询数据库时会用到的一个特别的对象，在Book.objects.all()的语法中，objects就是一个管理器，每个Model至少有一个管理器，你也可以创建自己的管理器来定义数据库访问操作。
 
-<pre class='prettyprint'>class BookManager(models.Manager):
+<pre>class BookManager(models.Manager):
     def title_count(self, keyword):
         return self.filter(title__icontains=keyword).count()
 
@@ -83,19 +83,19 @@ Book.objects.title_count('python')
 
 Model 方法 
 ---
-<pre class='prettyprint'>class Author(models.Model):
+<pre>class Author(models.Model):
     def get_full_name(self):
         return u'%s %s' % (self.first_name, self.last_name)
 </pre>
 同管理器相比，Model方法更像是基于记录级别的方法，像上面，当我们得到一个Author的记录后，就可以调用get_full_name来返回全名。
 
-<pre class='prettyprint'>p = Author.objects.get(first_name='Barack', last_name='Obama')
+<pre>p = Author.objects.get(first_name='Barack', last_name='Obama')
 p.get_full_name()
 </pre>
 
 执行自宝义的SQL语句
 ---
-<pre class='prettyprint'>class PythonBookManager(models.Manager):
+<pre>class PythonBookManager(models.Manager):
     def books_titles_after_publication(self, date_string):
         cursor = connection.cursor()
         cursor.execute("""
@@ -108,7 +108,7 @@ p.get_full_name()
 
 可以使用SQL对数据库中所有的表进行操作，而不是引用特定的Model类，这样操作比较自由，比较好的一个做法是把它放在一个自定义的管理器中。
 
-<pre class='prettyprint'>class Book(models.Model):
+<pre>class Book(models.Model):
     objects = BookManager()
 	customer_objects = PythonBookManager()
 
