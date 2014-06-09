@@ -36,7 +36,8 @@ class Book(models.Model):
         return self.title
 
 b1 = Book.objects.filter(publication_date__gte=datetime(2006, 1, 1))
-b2 = b1.filter(publisher__name__exact="Cleveland",publisher__website__exact="Ohio")
+b2 = b1
+ .filter(publisher__name__exact="Cleveland",publisher__website__exact="Ohio")
 </pre> 
 
 QuerySet是惰性的，这一点非常不错。这意味着只在对数据库进行求值之后才会对它们执行查询，这会比立即执行查询的速度更快。
