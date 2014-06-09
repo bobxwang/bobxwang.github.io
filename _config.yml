@@ -1,6 +1,6 @@
 markdown: rdiscount
 permalink: /:categories/:title/
-url: http://sevenz.github.io/about/
+url: http://sevenz.github.io
 author: bob 
 safe: true
 paginate: 16
