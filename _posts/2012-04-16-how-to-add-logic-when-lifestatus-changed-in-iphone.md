@@ -11,14 +11,23 @@ tags:
 
 **iphone 应用不同状态切换时回调的方法**
 
-* application:didFinishLaunching:WithOptions:
-* applicationDidBecomeActive:
-* applicationWillEnterForeground:
-* applicationWillResignActive:
-* applicationDidEnterBackground:
-* applicationWillTerminate:
-* application:didChangeStatusBarFrame:
-* UIApplicationDidReceiveMemoryWarningNotification:
+<pre>
+ application:didFinishLaunching:WithOptions:
+
+ applicationDidBecomeActive:
+
+ applicationWillEnterForeground:
+
+ applicationWillResignActive:
+
+ applicationDidEnterBackground:
+
+ applicationWillTerminate:
+
+ application:didChangeStatusBarFrame:
+
+ UIApplicationDidReceiveMemoryWarningNotification:
+</pre>
 
 **iphone 应用的几个状态**
 
