@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "苹果应用不同状态的回调处理"
+title:  "苹果应用不同状态切换时的处理"
 date:   2012-04-16 16:17:59
 categories: 
 - code 
@@ -13,19 +13,12 @@ tags:
 
 <pre>
  application:didFinishLaunching:WithOptions:
-
  applicationDidBecomeActive:
-
  applicationWillEnterForeground:
-
  applicationWillResignActive:
-
  applicationDidEnterBackground:
-
  applicationWillTerminate:
-
  application:didChangeStatusBarFrame:
-
  UIApplicationDidReceiveMemoryWarningNotification:
 </pre>
 
