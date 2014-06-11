@@ -63,6 +63,9 @@
       $(function() {
         $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
         window.prettyPrint && prettyPrint();
+        $('a[href^="http"]').each(function(){
+            $(this).attr('target', '_blank');
+        });
       });
 
       var _gaq = _gaq || [];
