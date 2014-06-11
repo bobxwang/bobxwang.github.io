@@ -4,7 +4,6 @@ layout: page
 comments: yes
 ---
 <link rel="stylesheet" media="all" href="/media/css/han.css">
-<script type="text/javascript" src="/media/js/han.js"></script>
 
 <p><a href="http://weibo.com/u/2096333467" title="微博" class="n fn full-name url" rel="external"><u class="family-name">王</u><u class="given-name">相</u></a><sup><a id="ref-1" href="#ref-note-1">[1]</a></sup>，名<u class="nickname">相</u><sup><a id="ref-2" href="#ref-note-2">[2]</a></sup>，<span class="title">天朝外出务工人员</span>，待解放微产阶级。</p>
 <p><time datetime="1984-08-28T09:00">1982年12月</time>出生于浙江义乌，码农一个<sup><a id="ref-3" href="#ref-note-3">[3]</a></sup>。</p>
