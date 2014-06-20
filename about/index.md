@@ -10,7 +10,7 @@ comments: yes
 
 <p>A thoughtful guy living a simple life.Working for bread, studying for interests, and thinking for hope.Usually using Python, Objective-C, C#, JavaScript to realize my ideas.</p>
 
-<p>父老相亲都认为我进了个养马的好农场，一传十十传百，不约而同的来到我家，让我把他们家孩子介绍进我农场养马，但是我告诉他们我们农场是拿<em>死工资</em>、<em>不包吃</em>、<em>不包住</em>、<em>不计件</em>、<em>天天无偿加班</em>赶工后，他们就含笑走开了。</p>
+<p>父老相亲都认为我进了个养马的好农场，一传十十传百，不约而同的来到我家，让我把他们家孩子介绍进我农场养马，但是我告诉他们我们农场是拿*死工资*、*不包吃*、*不包住*、*不计件*、*天天无偿加班*赶工后，他们就含笑走开了。</p>
 
 
 
