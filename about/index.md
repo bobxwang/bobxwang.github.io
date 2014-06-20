@@ -10,7 +10,7 @@ comments: yes
 
 <p>A thoughtful guy living a simple life.Working for bread, studying for interests, and thinking for hope.Usually using Python, Objective-C, C#, JavaScript to realize my ideas.</p>
 
-<p>父老相亲都认为我进了个养马的好农场，一传十十传百，不约而同的来到我家，让我把他们家孩子介绍进我农场养马，但是我告诉他们我们农场是拿<strong>死工资</strong>、<strong>不包吃</strong>、<strong>不包住</strong>、<strong>不计件</strong>、<strong>天天无偿加班</strong>赶工后，他们就含笑走开了。</p>
+<p>父老相亲都认为我进了个养马的好农场，一传十十传百，不约而同的来到我家，让我把他们家孩子介绍进我的农场养马，但是当我告诉他们我们农场是拿<strong>死工资</strong>、<strong>不包吃</strong>、<strong>不包住</strong>、<strong>不计件</strong>、<strong>天天无偿加班赶工</strong>，他们就含笑默默走开了。</p>
 
 
 以下来自维基百科对摩羯座男性的评价：
