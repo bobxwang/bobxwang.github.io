@@ -68,8 +68,7 @@ urlpatterns += patterns('weblog.views',
     	url(r'^history/$', 'history'),
     	url(r'^edit/$', 'edit'),
     	url(r'^discuss/$', 'discuss'),
-    	url(r'^permissions/$', 'permissions'),
-	))
+    	url(r'^permissions/$', 'permissions'),))
     ),
 )</pre>
 前面所讲的处理函数都是以字符串形式，我们也可以不用字符串形式
@@ -111,4 +110,4 @@ def redirect_to_year(request):
 <pre>urlpatterns = patterns('',
     url(r'^archive/(\d{4})/$', archive, name="full-archive"),
     url(r'^archive-summary/(\d{4})/$', archive, {'summary': True}, name="arch-summary"),
-)</pre>这样使用的时候，就变成了<pre>reverse('full-archive')</pre>框架也知道是指向archive/这个地址。
+)</pre>这样使用的时候，就变成了<pre>reverse('full-archive')</pre>框架也就知道了是指向archive/这个地址。
