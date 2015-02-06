@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Asp.net Web Api Compare Spring Rest"
+title:  "Asp.Net WebApi跟Spring Rest的Controller对比"
 date:   2013-10-09 14:17:59
 categories: 
 - code 
@@ -8,8 +8,7 @@ tags:
 - asp.net webapi
 - spring rest
 
-----------------------------
-
+---
 自从11年底接触Asp.net Web Api开始到现在转眼也快三年了，做个日志对比下开源框架Spring Rest。
 
 #Asp.net Web Api Controller Select && Spring Rest Controller Select
