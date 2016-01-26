@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh-cn">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="bob" />
+    <title>Django路由配置基本知识 | bob</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="/feed/" rel="alternate" title="bob" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/css/blackhigh.css">
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/media/js/prettify.js"></script>
+  </head>
+  <script type="text/javascript">
+    function setTimeSpan(){
+    	var date = new Date();
+    	timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+    }
+    
+    Date.prototype.format = function(format) {
+      var o = {
+      	    "M+" : this.getMonth()+1, //month
+      	    "d+" : this.getDate(),    //day
+      	    "h+" : this.getHours(),   //hour
+      	    "m+" : this.getMinutes(), //minute
+      	    "s+" : this.getSeconds(), //second
+      	    "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+      	    "S" : this.getMilliseconds() //millisecond
+      };
+    	if(/(y+)/.test(format))
+    	format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+    	for(var k in o)
+    	if(new RegExp("("+ k +")").test(format))
+    	format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+    	return format;
+		}
+  </script>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>Django路由配置基本知识</h1>
+        </header>
+        <nav>
+        <span><a title="home page" class="" href="/">Home</a></span>
+        <span><a title="about" class="" href="/about/">About</a></span>
+        <span><a title="categories" class="" href="/categories/">Categories</a></span>
+        <span><a title="tags" class="" href="/tags/">Tags</a></span>
+        <span><a title="tags" class="" href="/archive/">Archive</a></span>
+        </nav>
+        <article class="content">
+        <section>
+2010-05-05
+
+<span class="categories">
+ in 
+  <a href="/categories/#code" title="code">code</a>&nbsp;
+  
+</span>, 
+
+
+<span class="tags">
+  tags:
+  
+  <a href="/tags/#python" title="python">python</a>&nbsp;
+  
+  <a href="/tags/#django" title="django">django</a>&nbsp;
+  
+</span>
+
+</section>
+
+<section class="post">
+<h2>命名路由参数 vs. 非命名路由参数</h2>
+
+<p><img src="/media/pic/name-url-django.PNG" alt="clear cache" /></p>
+
+<ol>
+<li>如果匹配到命名路由，则优先选用，忽略掉非命名路由.</li>
+<li>把所有参数都传递到非命名路由中.</li>
+</ol>
+
+
+<p>所有参数捕获的值都是字符串</p>
+
+<h2>给VIEW函数添加参数默认值</h2>
+
+<pre>urlpatterns = patterns('',
+    url(r'^blog/$', 'blog.views.page'),
+    url(r'^blog/page(?P<num>\d+)/$', 'blog.views.page'),
+)
+def page(request, num="1"):
+</pre>
+
+
+<h2>视图处理函数前缀</h2>
+
+<pre>urlpatterns = patterns('',
+    url(r'^articles/(\d{4})/(\d{2})/$', 'news.views.month_archive'),
+    url(r'^articles/(\d{4})/(\d{2})/(\d+)/$', 'news.views.article_detail'),
+)
+</pre>
+
+
+<p>我们可以改成</p>
+
+<pre>urlpatterns = patterns('news.views',
+    url(r'^articles/(\d{4})/(\d{2})/$', 'month_archive'),
+    url(r'^articles/(\d{4})/(\d{2})/(\d+)/$', 'article_detail'),
+)
+</pre>
+
+
+<p>这样我们就可以少打几个字了，需要注意的是，"."我们不需要手动加了，Django框架会自动加上。
+如果有很多这种情况，那我们可以分开来写例子如下：</p>
+
+<pre>urlpatterns = patterns('',
+    url(r'^$', 'myapp.views.app_index'),
+    url(r'^(?P<year>\d{4})/(?P<month>[a-z]{3})/$', 'myapp.views.month_display'),
+    url(r'^tag/(?P<tag>\w+)/$', 'weblog.views.tag'),
+)</pre>
+
+
+<p>改成</p>
+
+<pre>urlpatterns = patterns('myapp.views',
+    url(r'^$', 'app_index'),
+    url(r'^(?P<year>\d{4})/(?P<month>[a-z]{3})/$','month_display'),
+)
+urlpatterns += patterns('weblog.views',
+    url(r'^tag/(?P<tag>\w+)/$', 'tag'),
+)</pre>
+
+
+<p>如果路由前面大部分一样，如下所示：</p>
+
+<pre>urlpatterns = patterns('wiki.views',
+    url(r'^(?P<page_slug>\w+)-(?P<page_id>\w+)/history/$', 'history'),
+    url(r'^(?P<page_slug>\w+)-(?P<page_id>\w+)/edit/$', 'edit'),
+    url(r'^(?P<page_slug>\w+)-(?P<page_id>\w+)/discuss/$', 'discuss'),
+    url(r'^(?P<page_slug>\w+)-(?P<page_id>\w+)/permissions/$', 'permissions'),
+)</pre>
+
+
+<p>那我们也可修改成如下样子：</p>
+
+<pre>urlpatterns = patterns('',
+    url(r'^(?P<page_slug>\w+)-(?P<page_id>\w+)/', include(patterns('wiki.views',
+        url(r'^history/$', 'history'),
+        url(r'^edit/$', 'edit'),
+        url(r'^discuss/$', 'discuss'),
+        url(r'^permissions/$', 'permissions'),))
+    ),
+)</pre>
+
+
+<p>前面所讲的处理函数都是以字符串形式，我们也可以不用字符串形式</p>
+
+<pre>from mysite import views
+urlpatterns = patterns('',
+    url(r'^archive/$', views.archive),
+    url(r'^about/$', views.about),
+)</pre>
+
+
+<h2>反转URL--避免硬编码</h2>
+
+<ul>
+<li>在模板中使用url标签</li>
+<li>在Python的VIEW处理函数中，用django.core.urlresolvers.reverse()</li>
+</ul>
+
+
+<p>假设有如下URL配置</p>
+
+<pre>urlpatterns = patterns('',
+    url(r'^articles/(\d{4})/$', 'news.views.year_archive'),
+)</pre>
+
+
+<p>在模板中，假设我们有个链接<pre>src='articles/2012'</pre>如果这样写的就是硬编码了，如果后期我们更改了，就会牵连到很多地方，那我们怎么避免呢？
+<img src="/media/pic/url-in-template.PNG" alt="clear cache" />
+这样我们就避免了，路由不管如何修改，只要处理函数不变就行。</p>
+
+<p>View处理函数中我们可以这样写：</p>
+
+<pre>from django.core.urlresolvers import reverse
+from django.http import HttpResponseRedirect
+def redirect_to_year(request):
+    year = 2006
+    url = reverse('news.views.year_archive', args=(year,))
+    return HttpResponseRedirect(url)
+</pre>
+
+
+<h2>命名URL</h2>
+
+<p>很多情况下，不同的URL地址可能是相同的函数处理，如下所示，/archive跟/archive-summary都由archive这个函数处理。</p>
+
+<pre>urlpatterns = patterns('',
+    url(r'^archive/(\d{4})/$', archive),
+    url(r'^archive-summary/(\d{4})/$', archive, {'summary': True}),
+)</pre>
+
+
+<p>这个时候如果我们也用reverse('archive')或者url标签在模板中，就会造成困惑，因为不知道跳转到哪个url地址。此时我们可以给这些url命个名字，如下：</p>
+
+<pre>urlpatterns = patterns('',
+    url(r'^archive/(\d{4})/$', archive, name="full-archive"),
+    url(r'^archive-summary/(\d{4})/$', archive, {'summary': True}, name="arch-summary"),
+)</pre>
+
+
+<p>这样使用的时候，就变成了<pre>reverse('full-archive')</pre>框架也就知道了是指向archive/这个地址。</p>
+
+</section>
+<section class="meta">
+
+<span class="author">
+  <a href="/about">bob</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2010-05-05">2010-05-05</time>
+</span>
+<br/>
+<br/>
+<span>
+	<a  href="/code/the-model-basic-knowledge-in-django/" class="pageNav"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="/code/the-form-basic-knowledge-in-django/" class="pageNav"  >Next</a>
+</span>
+</section>
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"sevenz"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+<!--
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://sevenz.github.io/code/the-model-basic-knowledge-in-django/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://sevenz.github.io/code/the-form-basic-knowledge-in-django/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+-->
+
+
+        </article>
+      </div>
+
+    <footer>
+        <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> & <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2016 by <a href="/about/">Bob</a> | <a href="https://github.com/sevenz/sevenz.github.io">Fork me on GitHub</a></small></p>
+    </footer>
+    </div>
+    
+    <script type="text/javascript">
+
+      $(function() {
+        $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
+        window.prettyPrint && prettyPrint();
+        $('a[href^="http"]').each(function(){
+            $(this).attr('target', '_blank');
+        });
+      });
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-11490513-1']);
+      _gaq.push(['_setDomainName', 'bob.net']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

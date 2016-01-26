@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh-cn">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="bob" />
+    <title>NET平台WEB开发中微软框架外的选择--Nancy | bob</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="/feed/" rel="alternate" title="bob" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/css/blackhigh.css">
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/media/js/prettify.js"></script>
+  </head>
+  <script type="text/javascript">
+    function setTimeSpan(){
+    	var date = new Date();
+    	timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+    }
+    
+    Date.prototype.format = function(format) {
+      var o = {
+      	    "M+" : this.getMonth()+1, //month
+      	    "d+" : this.getDate(),    //day
+      	    "h+" : this.getHours(),   //hour
+      	    "m+" : this.getMinutes(), //minute
+      	    "s+" : this.getSeconds(), //second
+      	    "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+      	    "S" : this.getMilliseconds() //millisecond
+      };
+    	if(/(y+)/.test(format))
+    	format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+    	for(var k in o)
+    	if(new RegExp("("+ k +")").test(format))
+    	format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+    	return format;
+		}
+  </script>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>NET平台WEB开发中微软框架外的选择--Nancy</h1>
+        </header>
+        <nav>
+        <span><a title="home page" class="" href="/">Home</a></span>
+        <span><a title="about" class="" href="/about/">About</a></span>
+        <span><a title="categories" class="" href="/categories/">Categories</a></span>
+        <span><a title="tags" class="" href="/tags/">Tags</a></span>
+        <span><a title="tags" class="" href="/archive/">Archive</a></span>
+        </nav>
+        <article class="content">
+        <section>
+2012-03-10
+
+<span class="categories">
+ in 
+  <a href="/categories/#code" title="code">code</a>&nbsp;
+  
+</span>, 
+
+
+<span class="tags">
+  tags:
+  
+  <a href="/tags/#c#" title="c#">c#</a>&nbsp;
+  
+  <a href="/tags/#api" title="api">api</a>&nbsp;
+  
+</span>
+
+</section>
+
+<section class="post">
+<p>NET平台做B/S开发，常见的比较正统的就是webform跟mvc两个框架，webform把B/S开发本质HTTP协议封装的死死的，将winform那套C/S模式搬到了B/S模式中，以至于好多做了几年B/S开发的伙计不知道http协议,不知道协议中状态码含义,不知道协议中各种响应的类型等等，mvc回归HTTP本质，扔掉了webform中广受诟病的各种控件，又让不少小伙伴很受伤，不知道怎么去开发，会了的又好像很了不起一样。其实不管如何，B/S开发，不管什么语言什么平台，说白了就是服务器端监听着某个端口，然后根据不同请求返回不同字符串，只是这字符串比较特殊，它要能让浏览器认识，仅此而已无它。</p>
+
+<p>言归正传，介绍一款开源的框架，<a href="http://nancyfx.org/" title="nancy org">Nancy</a>，下面我们采用自集成的方式，简单来说就是让你不用布置在IIS上面，了解WCF的小伙伴对自集成的方式应该不会陌生。</p>
+
+<p>我们需要添加如下两个程序集，</p>
+
+<pre>Nancy.dll,Nancy.Hosting.Self.dll</pre>
+
+
+<p>接下来继承NancyModule做如下自定义Moduld虚类，这个可以具体业务具体分析了，看是建还是不建。</p>
+
+<pre>public abstract class BaseModule:NancyModule{
+    public BaseModule():base(){
+    
+    }
+    public BaseModule(string modulePath):base(modulePath){
+        
+    }
+}
+</pre>
+
+
+<p>如果利用过asp.net mvc开发过项目的应该知道，在它的第二版中推出了area的概念，上面带参数的构造作用就在于此。</p>
+
+<p>做个RootModule，当用户访问这个根地址的时候由来处理，代码如下</p>
+
+<pre>public class RootModule:BaseModule{
+    public RootModule():base(){
+        Get["/"] = parameters => { return "Homepage"; };
+    }
+}</pre>
+
+
+<p>这样假如你在本地监听的是http://localhost:8888/nancy/，那么你在浏览器里输入上述地址的时候浏览器中就会显示Homepage的字眼，parameters是一个key-value的字典，代表的是HTTP协议中前端GET，POST，DELETE，PUT过来的数据集。</p>
+
+<p>在做另一个Moduel，</p>
+
+<pre>public class PhotoModule:BaseModule{
+    public PhotoModule(): base("/photo"){
+        Get["/{slug}"] = parameters => {
+            return String.Format("Photo {0}", parameters.slug);
+        };
+        Post["/{slug}/addcomment"] = parameters => {
+            string photoSlug = Convert.ToString(parameters.slug);
+            return Response.AsRedirect("/photo/" + photoSlug);
+        };
+    ｝
+｝
+</pre>
+
+
+<p>可以看出，当我们访问http://localhost:8888/nancy/photo/1234的时候，将会在浏览器中打印出Photo 1234的字眼，当我们POST数据到http://localhost:8888/nancy/photo/aaa/addcomment的路径时，将重定向到http://localhost:8888/nancy/photo/aaa，从而显示Photo aaa字眼。</p>
+
+<p>上面都是直接打印出一个字符串，我们可以通过设置Response的ContentType来达到返回json或者其它的功能。</p>
+
+<pre>public class JsonModule:BaseModule{
+    public JsonModule():base(){
+        Get["/"] = parameters => {   
+            Context.Response.ContentType = "application/json";
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            StringBuilder sb = new StringBuilder();
+            js.Serialize(new { id = 1, name = "bob" }, sb);
+            return sb;
+        };
+    }
+}
+</pre>
+
+
+<p>当然WEB开发中最主要的还是返回HTML，我们不可能在上面做字符串拼装，不现实，Nancy给我们考虑到了，相对来讲，还支持多种模板，Razor,Spark,DotLiquid,Markdown,Nustache都支持。</p>
+
+<pre>public class HtmlModule:BaseModule{ 
+   public JsonModule():base(){
+       Get["/testing"] = parameters => {
+           return View["staticview", modelname];
+       };
+   }
+}
+</pre>
+
+
+<p>上面第一个参数是模板名称，第二个参数是传给模板的模型。</p>
+
+<p>一般来讲，在做快速HTTP服务的时候，如果是NET平台，可以用其来做一个原型，实在是太方便了，特别是在当今移动终端及各种开放API的情况下，只提供数据，随便你们自己展示去。</p>
+
+</section>
+<section class="meta">
+
+<span class="author">
+  <a href="/about">bob</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2012-03-10">2012-03-10</time>
+</span>
+<br/>
+<br/>
+<span>
+	<a  href="/code/the-basic-cache-knowledge-in-http/" class="pageNav"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="/code/how-to-add-logic-when-lifestatus-changed-in-iphone/" class="pageNav"  >Next</a>
+</span>
+</section>
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"sevenz"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+<!--
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://sevenz.github.io/code/the-basic-cache-knowledge-in-http/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://sevenz.github.io/code/how-to-add-logic-when-lifestatus-changed-in-iphone/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+-->
+
+
+        </article>
+      </div>
+
+    <footer>
+        <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> & <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2016 by <a href="/about/">Bob</a> | <a href="https://github.com/sevenz/sevenz.github.io">Fork me on GitHub</a></small></p>
+    </footer>
+    </div>
+    
+    <script type="text/javascript">
+
+      $(function() {
+        $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
+        window.prettyPrint && prettyPrint();
+        $('a[href^="http"]').each(function(){
+            $(this).attr('target', '_blank');
+        });
+      });
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-11490513-1']);
+      _gaq.push(['_setDomainName', 'bob.net']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

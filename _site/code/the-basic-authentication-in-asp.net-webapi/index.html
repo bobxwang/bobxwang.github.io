@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh-cn">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="bob" />
+    <title>Asp.net Web Api中的Basic Authentication认证 | bob</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="/feed/" rel="alternate" title="bob" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/css/blackhigh.css">
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/media/js/prettify.js"></script>
+  </head>
+  <script type="text/javascript">
+    function setTimeSpan(){
+    	var date = new Date();
+    	timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+    }
+    
+    Date.prototype.format = function(format) {
+      var o = {
+      	    "M+" : this.getMonth()+1, //month
+      	    "d+" : this.getDate(),    //day
+      	    "h+" : this.getHours(),   //hour
+      	    "m+" : this.getMinutes(), //minute
+      	    "s+" : this.getSeconds(), //second
+      	    "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+      	    "S" : this.getMilliseconds() //millisecond
+      };
+    	if(/(y+)/.test(format))
+    	format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+    	for(var k in o)
+    	if(new RegExp("("+ k +")").test(format))
+    	format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+    	return format;
+		}
+  </script>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>Asp.net Web Api中的Basic Authentication认证</h1>
+        </header>
+        <nav>
+        <span><a title="home page" class="" href="/">Home</a></span>
+        <span><a title="about" class="" href="/about/">About</a></span>
+        <span><a title="categories" class="" href="/categories/">Categories</a></span>
+        <span><a title="tags" class="" href="/tags/">Tags</a></span>
+        <span><a title="tags" class="" href="/archive/">Archive</a></span>
+        </nav>
+        <article class="content">
+        <section>
+2012-09-05
+
+<span class="categories">
+ in 
+  <a href="/categories/#code" title="code">code</a>&nbsp;
+  
+</span>, 
+
+
+<span class="tags">
+  tags:
+  
+  <a href="/tags/#c#" title="c#">c#</a>&nbsp;
+  
+  <a href="/tags/#api" title="api">api</a>&nbsp;
+  
+</span>
+
+</section>
+
+<section class="post">
+<p>在如今各种OPEN API数不胜数的年代，如何保证调用方是受信任的，考虑到大多数OPEN　API都是基于HTTP协议，此系列打算就以<strong>Basic Authentication</strong>开始介绍。</p>
+
+<p>正如名字所示，basic authentication是http协议的一部分，是非常简单基本的，它的工作原理如下:</p>
+
+<ol>
+<li>客户端向服务端请求资源</li>
+<li>服务端发现此资源需要认证并且客户端没提供资料说自己是谁，那么服务端返回401-Unauthorized status code,同时在响应头中添加WWW-Authenticate:Basic这个Key</li>
+<li>此时客户端向服务端发送请求头Authorization:Basic ********</li>
+<li>如果客户端的credentials经过服务器认证是正确的，那么向客户端返回200这个状态码，如果服务器认证不通过，则重复步骤2</li>
+</ol>
+
+
+<p>整个流程如下图所示：
+<img src="/media/pic/basic-authentication.PNG" alt="Basic Authentication Flow" /></p>
+
+<p>Asp.net Web Api中我们可以继承DelegatingHandler并重写相应方法，代码如下:</p>
+
+<pre>public class AuthenticationHandler : DelegatingHandler 
+{
+    private const string SCHEME = "Basic";
+    protected override System.Threading.Tasks.Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, System.Threading.CancellationToken cancellationToken)
+    {
+        var headers = request.Headers;
+        if (headers.Authorization != null && SCHEME.Equals(headers.Authorization.Scheme))
+        {
+            Encoding encoding = Encoding.GetEncoding("iso-8859-1");
+            string credentials = encoding.GetString(Convert.FromBase64String(headers.Authorization.Parameter));
+            string[] parts = credentials.Split(':');
+            string userId = parts[0].Trim();
+            string password = parts[1].Trim();                 
+
+            // TODO - Do authentication of userId and password against your credentials store here
+            if (true)
+            {                    
+                IPrincipal principal = new CustomPrincipal(new CustomIdentity(userId));
+                Thread.CurrentPrincipal = principal;
+                if (HttpContext.Current != null)
+                {
+                    HttpContext.Current.User = principal;
+                }
+            }
+        }
+        var response = base.SendAsync(request, cancellationToken);
+        return response.ContinueWith<HttpResponseMessage>(x =>
+        {
+            HttpResponseMessage message = x.Result;
+            if (message.StatusCode == HttpStatusCode.Unauthorized)
+            {
+                message.Headers.WwwAuthenticate.Add(new AuthenticationHeaderValue(SCHEME));
+            }
+            return message;
+        });
+    }
+}
+</pre>
+
+
+<p>CustomPrincipal跟CustomIdentity是IPrincipal及IIdentity的相应实现。
+最后我们还需要把我们的这个Handler注册到系统中。</p>
+
+<pre>config.MessageHandlers.Add(new AuthenticationHandler());
+</pre>
+
+
+<p>接下来就是发布了。</p>
+
+<p>最后我们说说如何利用NET最新的HttpClient来访问，这里发下唠叨，话说NET平台下有WebClient,WebRequest，加上这个HttpClient,大家能知道他们的具体区别吗？</p>
+
+<p>HttpClient有两种方式来访问这种类型的服务。</p>
+
+<p>方法一：</p>
+
+<pre>HttpClientHandler handler = new HttpClientHandler();
+handler.Credentials = new NetworkCredential("username", "password");
+using (HttpClient client = new HttpClient(handler)) {
+    client.GetAsync("url").Result;
+}
+</pre>
+
+
+<p>方法二：</p>
+
+<pre>using (HttpClient client = new HttpClient(handler)) {
+    string creds = String.Format("{0}:{1}", "badrddi", "badrddi");
+    byte[] bytes = Encoding.ASCII.GetBytes(creds);
+    var header = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(bytes));
+    client.DefaultRequestHeaders.Authorization = header;
+    client.GetAsync("url").Result;
+}
+</pre>
+
+
+</section>
+<section class="meta">
+
+<span class="author">
+  <a href="/about">bob</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2012-09-05">2012-09-05</time>
+</span>
+<br/>
+<br/>
+<span>
+	<a  href="/programmer-life/difference-between-cs-and-bs-system-develope/" class="pageNav"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="/code/the-library-common-used-in-net/" class="pageNav"  >Next</a>
+</span>
+</section>
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"sevenz"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+<!--
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://sevenz.github.io/programmer-life/difference-between-cs-and-bs-system-develope/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://sevenz.github.io/code/the-library-common-used-in-net/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+-->
+
+
+        </article>
+      </div>
+
+    <footer>
+        <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> & <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2016 by <a href="/about/">Bob</a> | <a href="https://github.com/sevenz/sevenz.github.io">Fork me on GitHub</a></small></p>
+    </footer>
+    </div>
+    
+    <script type="text/javascript">
+
+      $(function() {
+        $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
+        window.prettyPrint && prettyPrint();
+        $('a[href^="http"]').each(function(){
+            $(this).attr('target', '_blank');
+        });
+      });
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-11490513-1']);
+      _gaq.push(['_setDomainName', 'bob.net']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

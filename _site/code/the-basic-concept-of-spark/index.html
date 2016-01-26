@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh-cn">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="bob" />
+    <title>Spark随谈--基础概念 | bob</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="/feed/" rel="alternate" title="bob" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/css/blackhigh.css">
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/media/js/prettify.js"></script>
+  </head>
+  <script type="text/javascript">
+    function setTimeSpan(){
+    	var date = new Date();
+    	timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+    }
+    
+    Date.prototype.format = function(format) {
+      var o = {
+      	    "M+" : this.getMonth()+1, //month
+      	    "d+" : this.getDate(),    //day
+      	    "h+" : this.getHours(),   //hour
+      	    "m+" : this.getMinutes(), //minute
+      	    "s+" : this.getSeconds(), //second
+      	    "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+      	    "S" : this.getMilliseconds() //millisecond
+      };
+    	if(/(y+)/.test(format))
+    	format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+    	for(var k in o)
+    	if(new RegExp("("+ k +")").test(format))
+    	format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+    	return format;
+		}
+  </script>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>Spark随谈--基础概念</h1>
+        </header>
+        <nav>
+        <span><a title="home page" class="" href="/">Home</a></span>
+        <span><a title="about" class="" href="/about/">About</a></span>
+        <span><a title="categories" class="" href="/categories/">Categories</a></span>
+        <span><a title="tags" class="" href="/tags/">Tags</a></span>
+        <span><a title="tags" class="" href="/archive/">Archive</a></span>
+        </nav>
+        <article class="content">
+        <section>
+2014-01-05
+
+<span class="categories">
+ in 
+  <a href="/categories/#code" title="code">code</a>&nbsp;
+  
+</span>, 
+
+
+<span class="tags">
+  tags:
+  
+  <a href="/tags/#bigdata" title="bigdata">bigdata</a>&nbsp;
+  
+  <a href="/tags/#spark" title="spark">spark</a>&nbsp;
+  
+</span>
+
+</section>
+
+<section class="post">
+<blockquote><p><strong>Application</strong>:基于Spark的用户程序，包含了一个driver program和集群中多个executor</p>
+
+<p><strong>Driver Program</strong>:运行Application的main()函数并创建SparkContext。通常SparkContext代表driver program</p>
+
+<p><strong>Executor</strong>:为某Application运行在worker node上的一个进程。该进程负责运行Task，并负责将数据存在内存或者磁盘上。每个Application都有自己独立的executors</p>
+
+<p><strong>Cluster Manager</strong>:在集群上获得资源的外部服务（例如 Spark Standalon，Mesos、Yarn)
+<strong>Worker Node</strong>:集群中任何可运行Application代码的节点</p>
+
+<p><strong>Task</strong>:被送到executor上执行的工作单元。</p>
+
+<p><strong>Job</strong>:可以被拆分成Task并行计算的工作单元，一般由Spark Action触发的一次执行作业。</p>
+
+<p><strong>Stage</strong>:每个Job会被拆分成很多组Task，每组任务被称为stage，也可称TaskSet。该术语可以经常在日志中看打。</p>
+
+<p><strong>RDD</strong>:Spark的基本计算单元，通过Scala集合转化、读取数据集生成或者由其他RDD经过算子操作得到。</p></blockquote>
+
+<h2>SparkConf</h2>
+
+<p>对于spark的环境做一些基本设置</p>
+
+<pre>conf = SparkConf().setAppName('APP_NAME')
+conf.setMaster('local')
+</pre>
+
+
+<h2>SparkContext</h2>
+
+<p>通过前面设置好的conf,构造出一个spark的上下文环境，作为一个操作和调度的总入口</p>
+
+<pre>sc = SparkContext(conf=conf)
+</pre>
+
+
+<h2>RDD</h2>
+
+<p><strong>Resilient Distributed Datasets</strong>，是一个容错的，并行的数据结构，可以让用户显示地将数据存储到磁盘和内存中，并能控制数据的分区，本质上，RDD是一个数据集。RDD将操作分成两类，<em>transformation</em>跟<em>action</em>，无论你执行了多少次transformation操作，RDD都不会真正执行运算，只有当action操作被执行时，运算才会触发，在其内部实现机制中是基于迭代器的，从而使数据的访问更高效。</p>
+
+<p><strong>Transformation</strong>，根据现有的数据集创建一个新的数据集</p>
+
+<ul>
+<li><p>map(func):对调用map的RDD数据集中的每个element都使用func，然后返回一个新的RDD</p></li>
+<li><p>filter(func):对调用filter的RDD数据集中的每个元素都使用func，然后返回一个包含使func为true的元素构成的RDD</p></li>
+<li><p>flatMap(func):和map差不多，但是flatMap对于每个输入元素生成的是0或多个结果，因此func函数返回值不是一个单一元素，而是一个序列</p></li>
+<li><p>groupByKey(numTasks):返回(K,Seq[V])，也就是hadoop中reduce函数接受的key-valuelist</p></li>
+<li><p>reduceByKey(func,[numTasks]):就是用一个给定的reduce func再作用在groupByKey产生的(K,Seq[V]),比如求和，求平均数</p></li>
+<li><p>sortByKey([ascending],[numTasks]):按照key来进行排序，是升序还是降序，ascending是boolean类型</p></li>
+</ul>
+
+
+<blockquote><p><strong>narrow dependencies</strong>
+子RDD的每个分区依赖于常数个父分区（与数据规模无关）
+输入输出一对一的算子，且结果RDD的分区结构不变。主要是map/flatmap
+输入输出一对一的算子，但结果RDD的分区结构发生了变化，如union/coalesce
+从输入中选择部分元素的算子，如filter、distinct、substract、sample</p>
+
+<p><strong>wide dependencies</strong>
+子RDD的每个分区依赖于所有的父RDD分区
+对单个RDD基于key进行重组和reduce，如groupByKey，reduceByKey
+对两个RDD基于key进行join和重组，如join
+经过大量shuffle生成的RDD，建议进行缓存。这样避免失败后重新计算带来的开销。</p></blockquote>
+
+<p><strong>Action</strong>，在数据集上运行计算后，返回一个值给驱动程序</p>
+
+<ul>
+<li><p>reduce(func):说白了就是聚集，接受传入的函数是两个参数输入返回一个值，这个函数必须是满足交换律和结合律的</p></li>
+<li><p>saveAsTextFile(path):把dataset写到一个text file中，或者hdfs，或者hdfs支持的文件系统中，spark把每条记录都转换为一行记录，然后写到file中</p></li>
+<li><p>saveAsSequenceFile(path):只能用在key-value对上，然后生成SequenceFile写到本地或者hadoop文件系统</p></li>
+</ul>
+
+
+<pre>data = [1,2,3,4,5]
+distData = sc.parallelize(data)
+lines = sc.textFile('data.txt')
+linelengths = lines.map(lambda s: len(s))
+totallength = linelengths.reduce(lambda a,b: a+b)
+</pre>
+
+
+<h2>Shared Variables</h2>
+
+<p>一般来说，当一个函数被传给Spark操作(map/reduce)，通常是在集群结点上运行，在函数中使用到的所有变量都分别做拷贝供函数操作而不会相互影响，而在这些函数中对变量所做的所有更新都不会被传播回驱动程序。然而Spark提供两种有限的共享变量：广播跟累加。</p>
+
+<h5>Broadcast Vaiables: 广播变量，可以在每台机器上缓存只读变量而不需要为各个任务发送该变量的拷贝，可以让大的输入数据集的集群拷贝中的节点更加高效</h5>
+
+<pre>broadcastVar = sc.broadcase([1,2,3])
+</pre>
+
+
+<h5>Accumulators: 累加器，只有驱动程序才能获取累加器的值</h5>
+
+<pre>accum = sc.accumulator(0)
+sc.parallelize([1,2,3,4]).foreach(lambda x:accum.add(x))
+</pre>
+
+
+</section>
+<section class="meta">
+
+<span class="author">
+  <a href="/about">bob</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2014-01-05">2014-01-05</time>
+</span>
+<br/>
+<br/>
+<span>
+	<a  href="/code/compare-the-aspwebapi-with-spring-rest/" class="pageNav"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="/code/basic-knlowledge-in-spring-cloud/" class="pageNav"  >Next</a>
+</span>
+</section>
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"sevenz"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+<!--
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://sevenz.github.io/code/compare-the-aspwebapi-with-spring-rest/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://sevenz.github.io/code/basic-knlowledge-in-spring-cloud/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+-->
+
+
+        </article>
+      </div>
+
+    <footer>
+        <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> & <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2016 by <a href="/about/">Bob</a> | <a href="https://github.com/sevenz/sevenz.github.io">Fork me on GitHub</a></small></p>
+    </footer>
+    </div>
+    
+    <script type="text/javascript">
+
+      $(function() {
+        $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
+        window.prettyPrint && prettyPrint();
+        $('a[href^="http"]').each(function(){
+            $(this).attr('target', '_blank');
+        });
+      });
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-11490513-1']);
+      _gaq.push(['_setDomainName', 'bob.net']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>
