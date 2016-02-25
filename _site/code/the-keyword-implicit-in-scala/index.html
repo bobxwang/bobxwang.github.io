@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="bob" />
-    <title>Spring Cloud--基础概念 | bob</title>
+    <title>scala中的隐式转换 | bob</title>
     <link rel="shortcut icon" href="/favicon.ico">
     <link href="/feed/" rel="alternate" title="bob" type="application/atom+xml" />
     <link rel="stylesheet" href="/media/css/style.css">
@@ -39,7 +39,7 @@
     <div id="container">
       <div id="main" role="main">
         <header>
-        <h1>Spring Cloud--基础概念</h1>
+        <h1>scala中的隐式转换</h1>
         </header>
         <nav>
         <span><a title="home page" class="" href="/">Home</a></span>
@@ -50,7 +50,7 @@
         </nav>
         <article class="content">
         <section>
-2015-06-05
+2014-04-01
 
 <span class="categories">
  in 
@@ -62,40 +62,115 @@
 <span class="tags">
   tags:
   
-  <a href="/tags/#microservice" title="microservice">microservice</a>&nbsp;
+  <a href="/tags/#scala" title="scala">scala</a>&nbsp;
   
-  <a href="/tags/#springcloud" title="springcloud">springcloud</a>&nbsp;
+  <a href="/tags/#implicit" title="implicit">implicit</a>&nbsp;
   
-  <a href="/tags/#netflix" title="netflix">netflix</a>&nbsp;
+  <a href="/tags/#extensions method" title="extensions method">extensions method</a>&nbsp;
   
 </span>
 
 </section>
 
 <section class="post">
-<p>当今微服务在博客，社交媒体或会议演讲中获得越来越多关注，同时社区中也有不少怀疑论者，认为其并不是很新东西，而是对SOA架构的重新包装。然而微服务架构模式却正在为敏捷部署及复杂企业应用提供巨大的帮助。如想获得微服务的最新消息，可以关注其<a href="http://microservices.io/">官网</a>。</p>
+<h4>implicit</h4>
 
-<p>跨入微服务领域意味着我们正式迎接分布式系统所带来的诸多挑战，而分布式系统绝不是那种能够"凑合使用"的方案。</p>
+<p>在scala中有一个关键字，implicit，就是我们这篇文章的主题。
+先看一个简单的例子：</p>
 
-<p>jvm平台的著名开源库Spring将<a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/">spring-boot</a>与<a href="http://netflix.github.io/">netflix</a>的库相结合，推出了<a href="http://projects.spring.io/spring-cloud/spring-cloud.html">spring-cloud</a>。</p>
+<pre>def display(input:String) = println(input)</pre>
 
-<p>spring-cloud为开发者提供了在分布式系统(如配置服务，服务发现，断路器，智能路由，控制总线，一次性Token，全局锁)等操作的开发工具，目前已经提供在<a href="http://mvnrepository.com/search?q=spring+cloud">Maven</a>中央仓库中。</p>
 
-<p>spring cloud包含一大堆子项目，已经开源在github上面，可以在<a href="https://github.com/spring-cloud/">这里</a>查看。</p>
+<p>我们可以看到display函数的定义只接受String类型的参数，如果调用display("fucktest")不会有任何问题，但如果传参是非字符串的话，编译会通不过。
+此时如果我们想让display可以接受其它类型的参数，除非我们重载它，重新定义一个其它类型有入参，此时implicit关键字就派上用场了，我们可以在相同的作用域内用implicit关键字定义一个隐式转换函数。</p>
 
-<blockquote><p><strong>spring cloud cli</strong></p>
+<pre>object ImplicitTutorial{
+    def display(input:String) = println(input)
+    implicit def int2String(input:Int) = input.toString
+    implicit def boolean2String(input:Boolean) = if(input) "true" else "false"
+    def main(args:Array[String]):Unit = {
+        def("fucktest") 
+        def(2)
+        def(true)
+    }
+}</pre>
 
-<p><strong>spring cloud context</strong></p>
 
-<p><strong>spring cloud commons</strong></p>
+<p>在这个作用域内，我们定义了两个隐式转换函数，这样dispay函数就能接受Int跟Boolean类型的参数了。
+得出一个结论：</p>
 
-<p><strong>spring cloud config</strong></p>
+<blockquote><p>隐式函数是指在同一个作用域下，一个给定参数类型并自动转换指定类型的函数，这个函数跟函数名字无关，跟入参参数名字无关，只和入参参数类型及返回类型相关，注意是同一个作用域。</p></blockquote>
 
-<p><strong>spring cloud netflix</strong>：service discovery: Eureka; circuit breaker: Hystrix; client side loadbalancer: Ribbon; declarative rest client: Feign; router and filter: Zuul(Reverse Proxy)</p></blockquote>
+<p>关于这点，在c#语言中一样存在implicit这个关键字</p>
 
-<p>当然，服务注册发现这块，spring cloud除了netflix公司的Eureka之外，也可以选择consul或者zookeeper。</p>
+<pre>class Machine {
+    public int Value { get;set; }
+    public static implicit operator ToWidget(Machine m) {
+        Widget w = new Widegt();
+        w.Value = m.Value * 2;
+        return w;
+    }
+} 
+class Widget {
+    public int Value { get;set; }
+    public static implicit operator ToMachine(Widget w) {
+        Machine m = new Machine();
+        m.Value = w.Value / 2;
+        return m;
+    }
+}
+class Program {
+    static void Main() {
+        Machine m = new Machine();
+        m.Value = 5;
+        // Implicit conversion from machine to widget.
+        Widget w = m;
+        Console.WriteLine(w.Value); // should print 10
+        Machine m2 = w
+        Console.WriteLine(w.Value); // should print 5
+    }
+}</pre>
 
-<p>下文将会对每个子项目做个说明。</p>
+
+<p>可以看到两个不同的语言用差不多的方法解决相似的类型转换问题。</p>
+
+<h4>Type Extension</h4>
+
+<p>不过，在c#中，有一个扩展方法(objective-c中也有相关概念，叫做<a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/CustomizingExistingClasses/CustomizingExistingClasses.html">Category</a>)，它让我们可以在不用继承的前提下对一个类进行扩展，在这概念出现前，我们一般会写一个工具类来处理，让我们看看是怎么实现的。</p>
+
+<pre>public static class IntExtension{
+    public static long plus(this int input,int another) {
+        return input + another;
+    }
+}</pre>
+
+
+<p>这样我们就为int这种类型添加了一个plus的方法，因此我们可以这样来调用</p>
+
+<pre>int i = 5;
+long result = i.plus(56)</pre>
+
+
+<p>如果想在scala中实现相同的方案，我们可以变相的通过implicit来实现，下面是相应的代码实现。</p>
+
+<pre>case class IntExtension(value:Int) {
+    def plus(another:Int):Int = value + antoher
+}
+implicit def int2IntExtension(value:Int) = { IntExtension(value) }
+val i = 45
+val resutl = i.plus(3)
+</pre>
+
+
+<p>这样我们就实现了c#中的扩展方法。</p>
+
+<blockquote><p>最后总结：</p>
+
+<blockquote><p>隐式转换在同一个作用域中不能存在参数跟返回值完全相同的两个函数</p>
+
+<p>隐式转换只在意输入类型，返回类型</p>
+
+<p>隐式转换是scala语法灵活和简洁的重要组成部分</p></blockquote></blockquote>
 
 </section>
 <section class="meta">
@@ -105,14 +180,14 @@
 </span>
 <span class="time">
   /
-  <time datetime="2015-06-05">2015-06-05</time>
+  <time datetime="2014-04-01">2014-04-01</time>
 </span>
 <br/>
 <br/>
 <span>
-	<a  href="/code/the-keyword-implicit-in-scala/" class="pageNav"  >Previous</a>
+	<a  href="/code/the-basic-concept-of-spark/" class="pageNav"  >Previous</a>
 	&nbsp;&nbsp;&nbsp;
-	<a   class="pageNavInvalid"  >Next</a>
+	<a  href="/code/basic-knlowledge-in-spring-cloud/" class="pageNav"  >Next</a>
 </span>
 </section>
 <!-- Duoshuo Comment BEGIN -->
@@ -137,11 +212,13 @@ $(function(){
     var url = false;
         if (e.which == 37 || e.which == 74) {  // Left arrow and J
             
-        url = 'http://sevenz.github.io/code/the-keyword-implicit-in-scala/';
+        url = 'http://sevenz.github.io/code/the-basic-concept-of-spark/';
         
         }
         else if (e.which == 39 || e.which == 75) {  // Right arrow and K
             
+        url = 'http://sevenz.github.io/code/basic-knlowledge-in-spring-cloud/';
+        
         }
         if (url) {
             window.location = url;
