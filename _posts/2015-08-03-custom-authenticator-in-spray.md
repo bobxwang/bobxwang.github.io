@@ -14,8 +14,8 @@ tags:
 # Spray权限验证原理
 * authenticate directive包含如下两个签名方法
 <pre>
-def authenticate\[T\](auth:=>Future[Authentication[T]])(implicit executor: ExecutionContext): Directive1[T]
-def authenticate\[T\](auth: ContextAuthenticator[T])(implicit executor: ExecutionContext): Directive1[T]</pre>
+def authenticate[T](auth:=>Future[Authentication[T]])(implicit executor: ExecutionContext): Directive1[T]
+def authenticate[T](auth: ContextAuthenticator[T])(implicit executor: ExecutionContext): Directive1[T]</pre>
 而ContextAuthenticator跟Authentication其实是两个自定义类型
 <pre>type Authentication[T] = Either[Rejection, T]
 type ContextAuthenticator[T] = RequestContext ＝> Future[Authentication[T]]</pre>
@@ -26,17 +26,17 @@ type ContextAuthenticator[T] = RequestContext ＝> Future[Authentication[T]]</pr
 * 首先我们先创建一个类用来存储此次请求的clientId及token,并且一个方法用来从请求中解析出相应参数值
 <pre>case class Credentials(clientId: String, token: String)
 def extractCredentials(ctx: RequestContext): Option[Credentials] = {
-		val queryParams = ctx.request.uri.query.toMap
-  		for {
-    		id <- queryParams.get("clientId")
-    		secret <- queryParams.get("token")
-  		} yield Credentials(id, secret)
+	val queryParams = ctx.request.uri.query.toMap
+  	for {
+    	    id <- queryParams.get("clientId")
+    	    secret <- queryParams.get("token")
+  	} yield Credentials(id, secret)
 }</pre>
 * 接下来自定义一个我们自己的ContextAuthenticator，记住Authentication[T]其实就是一个Either[Rejection, T]的别名
 <pre>val authenticator: ContextAuthenticator[Unit] = { ctx =>
      Future {
        val maybeCredentials = extractCredentials(ctx)
-         maybeCredentials.fold\[authentication.Authentication[Unit]](
+         maybeCredentials.fold[authentication.Authentication[Unit]](
            Left(AuthenticationFailedRejection(CredentialsMissing, List()))
          )( credentials =>
              credentials match {
@@ -49,11 +49,10 @@ def extractCredentials(ctx: RequestContext): Option[Credentials] = {
  
 # 如何使用
 * 在你需要验证的route上进行如下包装
-<pre>def routes: Route =
-       authenticate(authenticator) { authenticated =>
-           uroutes ~ uotherroutes
-       }
-    }</pre>
+<pre>def routes: Route = authenticate(authenticator) { authenticated =>
+          uroutes ~ uotherroutes
+        }
+     }</pre>
  
 
 
