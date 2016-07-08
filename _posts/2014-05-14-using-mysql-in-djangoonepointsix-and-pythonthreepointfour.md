@@ -11,7 +11,7 @@ tags:
 ---
 最近赶下新潮，用起了Python3.4跟Django1.6，数据库依然是MySql。
 
-悲剧的是在Python2.7时代连接MySql的MySQLdb还不支持Python3.4，还好，苦苦追问G哥，终于找到一款代替品，而且效果还不错，它就是[pymysql]()
+悲剧的是在Python2.7时代连接MySql的MySQLdb还不支持Python3.4，还好，苦苦追问G哥，终于找到一款代替品，而且效果还不错，它就是[pymysql](https://pypi.python.org/pypi/PyMySQL)
 
 下载之，安装。
 
