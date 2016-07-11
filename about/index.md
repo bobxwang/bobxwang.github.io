@@ -8,7 +8,7 @@ comments: yes
 <p><a href="http://weibo.com/u/2096333467" title="微博" class="n fn full-name url" rel="external"><u class="family-name">王</u><u class="given-name">相</u></a><sup><a id="ref-1" href="#ref-note-1">[1]</a></sup>，名<u class="nickname">相</u><sup><a id="ref-2" href="#ref-note-2">[2]</a></sup>，<span class="title">天朝外出务工人员</span>，待解放微产阶级。</p>
 <p><time datetime="1984-08-28T09:00">1982年12月</time>出生于浙江义乌，码农一个<sup><a id="ref-3" href="#ref-note-3">[3]</a></sup>。</p>
 
-<p>A thoughtful guy living a simple life.Working for bread, studying for interests, and thinking for hope.Usually using Python, Objective-C, C#, JavaScript to realize his ideas.</p>
+<p>A thoughtful guy living a simple life.Working for bread, studying for interests, and thinking for hope.Usually using Python, Objective-C, C#, JavaScript to realize his ideas.Now for some reasons, working at jvm platform, but using scala to coding.</p>
 
 <p>父老相亲都认为我进了个养马的好农场，一传十十传百，不约而同的来到我家，让我把他们家孩子介绍进我的农场养马，但是当我告诉他们我们农场是拿<strong>死工资</strong>、<strong>不包吃</strong>、<strong>不包住</strong>、<strong>不计件</strong>、<strong>天天无偿加班赶工</strong>，他们就含笑默默走开了。</p>
 
