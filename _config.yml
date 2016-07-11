@@ -1,4 +1,4 @@
-markdown: rdiscount
+markdown: kramdown
 permalink: /:categories/:title/
 url: http://sevenz.github.io
 author: bob 
