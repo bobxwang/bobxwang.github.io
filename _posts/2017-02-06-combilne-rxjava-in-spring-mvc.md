@@ -60,39 +60,4 @@ class WebConfig extends WebMvcConfigurerAdapter {
     returnValueHandlers.add(new ObservableReturnValueHandler)
     }
 }</pre>
-
-至此，在action中就可以返回**Observable**的类型了
-<pre>
-@RequestMapping(value = "/rx/observable/{name}", method = RequestMethod.GET)
-public Observable<RxJavaDTO> observable(@PathVariable("name") String name) {
-  log.info("rs/observable/ begin to process");
-  Observable<RxJavaDTO> temp = rxJavaService.compose(name);
-  log.info("rs/observable/ stop to process");
-  return temp;
-}</pre>
-RxJavaService就是一个简单的Service,模拟一个简单的耗时操作
-<pre>
-@Service
-public class RxJavaService {
-  public Observable<RxJavaDTO> compose(String name) {
-      return Observable.<RxJavaDTO>create(sub -> {
-            LOGGER.info(s"handlerInputParm/" + name + "begin to process")
-       Thread.sleep(1000 * 2)
-       RxJavaDTO item = new RxJavaDTO(name);
-       sub.onNext(item);
-       LOGGER.info(s"handlerInputParm/" + name + "stop to process")
-       sub.onCompleted();
-    });
-}</pre>
-
-如果添加一个Filter，在执行前后打印其日志，我们可以看到
-<pre>
-[XNIO-2 task-7][] INFO  com.bob.java.webapi.filter.MDCFilter - /rxjava/v1/rx/observable/123 -> 开始客户端请求ip -> 127.0.0.1 标识符是 -> 9e110f7a-ad09-4619-9f69-753e96a4e7ce
-[XNIO-2 task-7] [] INFO  c.b.j.w.controller.RxJavaController - rs/observable/ begin to process
-[XNIO-2 task-7] [] INFO  c.b.j.w.controller.RxJavaController - rs/observable/ stop to process
-[RxNewThreadScheduler-1] [] INFO  c.b.s.webapi.service.HelperService - handlerInputParm/123 begin to process
-[XNIO-2 task-7] [] INFO  com.bob.java.webapi.filter.MDCFilter - /rxjava/v1/rx/observable/123 -> 结束客户端请求ip -> null 标识符是 -> null
-[RxNewThreadScheduler-1] [] INFO  c.b.s.webapi.service.HelperService - handlerInputParm/123 stop to process
-[RxNewThreadScheduler-1] [] INFO  c.b.j.w.h.ObservableReturnValueHandler - observableAdapter set the result value to DeferredResult</pre>
-
-Filter执行结束的时候response并没有值，通过其线程名也可以看出是不同的线程在处理，当然，本文所述只是一个简单的实现，正式环境中还需要考虑超时的处理。
+当然，本文所述只是一个简单的实现，正式环境中还需要考虑超时的处理。
