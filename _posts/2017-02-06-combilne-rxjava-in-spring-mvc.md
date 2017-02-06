@@ -51,7 +51,7 @@ class ObservableReturnValueHandler implements AsyncHandlerMethodReturnValueHandl
 
 rxjava默认是单线程，所以我们在订阅的时候即subscribeOn的时候传入一个Schedulers.newThread来告诉它需要在一个新线程中运行接下来的代码，关于Schedulers的设置具体请参考[Scheduler](http://reactivex.io/documentation/scheduler.html)
 
-当然，我们最后还要把上面的类添加到spring体系中，通过重写**WebMvcConfigurerAdapter**类的**addReturnValueHandlers**方法来做到这一点。
+当然，我们最后还要把上面的类添加到spring体系中。
 <pre>
 @Configuration
 class WebConfig extends WebMvcConfigurerAdapter {
