@@ -18,7 +18,7 @@ tags:
 <pre>class ObservableReturnValueHandler implements AsyncHandlerMethodReturnValueHandler {
   @Override
   public boolean isAsyncReturnValue(Object returnValue, MethodParameter returnType) {
-    return returnValue != null && supportsReturnType(returnType);
+    return returnValue != null &amp;&amp; supportsReturnType(returnType);
   }
   @Override
   public boolean supportsReturnType(MethodParameter returnType) {
@@ -31,12 +31,12 @@ tags:
       mavContainer.setRequestHandled(true);
       return;
     }
-    final Observable<?> observable = Observable.class.cast(returnValue);
+    final Observable&lt;?> observable = Observable.class.cast(returnValue);
     WebAsyncUtils.getAsyncManager(webRequest)
-            .startDeferredResultProcessing(new ObservableAdapter<>(observable), mavContainer);
+            .startDeferredResultProcessing(new ObservableAdapter&lt;>(observable), mavContainer);
   }
-  public class ObservableAdapter<T> extends DeferredResult<T> {
-    public ObservableAdapter(Observable<T> observable) {
+  public class ObservableAdapter&lt;T> extends DeferredResult&lt;T> {
+    public ObservableAdapter(Observable&lt;T> observable) {
       log.debug("observableAdapter begin to process");
       observable.subscribeOn(Schedulers.newThread())
               .subscribe(
