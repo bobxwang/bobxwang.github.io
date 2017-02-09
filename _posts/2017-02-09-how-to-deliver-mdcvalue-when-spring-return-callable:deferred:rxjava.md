@@ -23,12 +23,12 @@ tags:
 
 <pre>public class MDCCallableProcessingInterceptor extends CallableProcessingInterceptorAdapter {    
    @Override    
-   public <T> void beforeConcurrentHandling(NativeWebRequest request, Callable&lt;T> task) throws Exception {          
+   public &lt;T> void beforeConcurrentHandling(NativeWebRequest request, Callable&lt;T> task) throws Exception {          
    		request.setAttribute("mdcmap", MDC.getCopyOfContextMap(), -1);        
    		super.beforeConcurrentHandling(request, task);
    }    
    @Override    
-   public <T> void preProcess(NativeWebRequest request, Callable&lt;T> task) throws Exception {        
+   public &lt;T> void preProcess(NativeWebRequest request, Callable&lt;T> task) throws Exception {        
        Map map = (Map) request.getAttribute("mdcmap", -1);                
        MDC.setContextMap(map);        
        super.preProcess(request, task);    
