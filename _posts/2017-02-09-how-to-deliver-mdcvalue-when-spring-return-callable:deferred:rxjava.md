@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SpringMVC异步返回时如何将MDC值由请求线程传递到工作线程"
+title:  "Spring异步返回时如何将线程值由请求线程传递到工作线程"
 date:   2017-02-09 20:17:59
 categories: 
 - code 
