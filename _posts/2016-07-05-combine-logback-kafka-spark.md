@@ -12,6 +12,7 @@ tags:
 [kafka](http://kafka.apache.org)是[linkedin](https://github.com/linkedin)开发并开源出来的一个分布式MQ系统，现在是Apache的一个顶级项目。[spark](http://spark.apache.org/)是一个加州大学伯克利分校的AMP实验室所开源出来的一个类Hadoop MapReduce的通用并行框架。[logback](https://logback.qos.ch/)是继log4j后又一个开源日志组件。关于这三个组件在这不做过多介绍，本文描述的是怎么把它们三个组合在一起。
 
 ##### Kafka + Logback
+
 * 首先编写一个接口，目的是把ILoggingEvent类转成字符串
 <pre>trait Formatter {
   def format(event: ILoggingEvent): String
@@ -65,6 +66,7 @@ class JsonFormatter extends Formatter {
   }
 }</pre>
 
+
 ##### Kafka + Spark
 spark消费kafka数据有两种方案，一种需要自己维护offset，另一种不需要，在这我们采用直连的方式进行消费
 <pre>def consumerByDirectSpark(topic: String = "bbtest"): Unit = {
@@ -84,6 +86,7 @@ spark消费kafka数据有两种方案，一种需要自己维护offset，另一�
 }
 </pre>
 
+
 ##### logback 
 关于loback，在这只要在logback.xml文件中添加相关的appender即可
 <pre>&lt;appender name="KAFKA" class="com.bob.kafka.KafkaAppender">
@@ -101,6 +104,7 @@ spark消费kafka数据有两种方案，一种需要自己维护offset，另一�
     &lt;appender-ref ref="KAFKA"/>
 &lt;/logger>
 </pre>
+
 
 ##### 最后
 我们在spark进行消费kafka日志数据的时候，可以直接对某种类型的错误如果频繁发生时，可以进行报警。同时也可以在消费完后入到[elasticsearch](https://www.elastic.co/products/elasticsearch)中，结合[kinaba](https://www.elastic.co/products/kibana)进行相关日志查询。
