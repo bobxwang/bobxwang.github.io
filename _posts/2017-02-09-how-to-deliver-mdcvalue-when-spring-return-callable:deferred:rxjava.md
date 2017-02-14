@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SpringMVC异步返回时如何将MDC值由请求线程传递到工作线程"
+title:  "Spring异步返回时如何将线程值由请求线程传递到工作线程"
 date:   2017-02-09 20:17:59
 categories: 
 - code 
@@ -23,12 +23,12 @@ tags:
 
 <pre>public class MDCCallableProcessingInterceptor extends CallableProcessingInterceptorAdapter {    
    @Override    
-   public <T> void beforeConcurrentHandling(NativeWebRequest request, Callable&lt;T> task) throws Exception {          
+   public &lt;T> void beforeConcurrentHandling(NativeWebRequest request, Callable&lt;T> task) throws Exception {          
    		request.setAttribute("mdcmap", MDC.getCopyOfContextMap(), -1);        
    		super.beforeConcurrentHandling(request, task);
    }    
    @Override    
-   public <T> void preProcess(NativeWebRequest request, Callable&lt;T> task) throws Exception {        
+   public &lt;T> void preProcess(NativeWebRequest request, Callable&lt;T> task) throws Exception {        
        Map map = (Map) request.getAttribute("mdcmap", -1);                
        MDC.setContextMap(map);        
        super.preProcess(request, task);    
