@@ -14,55 +14,55 @@ tags:
 ##### Kafka + Logback
 * 首先编写一个接口，目的是把ILoggingEvent类转成字符串
 <pre>trait Formatter {
-    	def format(event: ILoggingEvent): String
+  def format(event: ILoggingEvent): String
 }
 class JsonFormatter extends Formatter {
-	    private val includeMethodAndLineNumber: Boolean = false
-	    private val objectMapper: ObjectMapper = new ObjectMapper
-	    def format(event: ILoggingEvent): String = {
-	      val maps: java.util.Map[String, AnyRef] = new java.util.HashMap[String, AnyRef]
-	      maps.put("level", event.getLevel.levelStr)
-	      maps.put("logger", event.getLoggerName)
-	      maps.put("timestamp", event.getTimeStamp)
-	      maps.putAll(event.getMDCPropertyMap)
-	      maps.put("message", event.getFormattedMessage)
-	      if (includeMethodAndLineNumber) {
-	        val callerDataArray: Array[StackTraceElement] = event.getCallerData
-	        if (callerDataArray != null && callerDataArray.length > 0) {
-	          val stackTraceElement: StackTraceElement = callerDataArray(0)
-	          maps.put("stack", stackTraceElement)
-	        }
-	      }
-	      try
-	        objectMapper.writeValueAsString(maps)
-	      catch {
-	        case e: Exception => event.getFormattedMessage
-	      }
-	   }
+  private val includeMethodAndLineNumber: Boolean = false
+  private val objectMapper: ObjectMapper = new ObjectMapper
+  def format(event: ILoggingEvent): String = {
+    val maps: java.util.Map[String, AnyRef] = new java.util.HashMap[String, AnyRef]
+    maps.put("level", event.getLevel.levelStr)
+    maps.put("logger", event.getLoggerName)
+    maps.put("timestamp", event.getTimeStamp)
+    maps.putAll(event.getMDCPropertyMap)
+    maps.put("message", event.getFormattedMessage)
+    if (includeMethodAndLineNumber) {
+       val callerDataArray: Array[StackTraceElement] = event.getCallerData
+       if (callerDataArray != null && callerDataArray.length > 0) {
+          val stackTraceElement: StackTraceElement = callerDataArray(0)
+	  maps.put("stack", stackTraceElement)
+       }
+    }
+    try
+      objectMapper.writeValueAsString(maps)
+    catch {
+      case e: Exception => event.getFormattedMessage
+    }
+  }
 }</pre>
 * 基于kafka实现一个appender 
 <pre>class KafkaAppender extends AppenderBase[ILoggingEvent] {
-	  private val LOGGER: Logger = LoggerFactory.getLogger(classOf[KafkaAppender])
-	  private var formatter: Formatter = new JsonFormatter
-	  private var kafkaProducerProperties: String = null
-	  private var topic: String = null
-	  private var producer: Producer[String, String] = null
-	  override def append(e: ILoggingEvent) = {
-	    val string: String = this.formatter.format(e)
-	    val producerRecord: KeyedMessage[String, String] = new KeyedMessage\[String, String](topic, string)
-	    producer.send(producerRecord)
-	  }
-	  override def stop() = {
-	    super.stop()
-	    producer.close()
-	  }
-	  override def start() = {
-	    super.start()
-	    val properties: Properties = new Properties
-	    properties.load(new StringReader(kafkaProducerProperties))
-	    val config: ProducerConfig = new ProducerConfig(properties)
-	    producer = new Producer\[String, String](config)
-	  }
+  private val LOGGER: Logger = LoggerFactory.getLogger(classOf[KafkaAppender])
+  private var formatter: Formatter = new JsonFormatter
+  private var kafkaProducerProperties: String = null
+  private var topic: String = null
+  private var producer: Producer[String, String] = null
+  override def append(e: ILoggingEvent) = {
+    val string: String = this.formatter.format(e)
+    val producerRecord: KeyedMessage[String, String] = new KeyedMessage\[String, String](topic, string)
+    producer.send(producerRecord)
+  }
+  override def stop() = {
+    super.stop()
+    producer.close()
+  }
+  override def start() = {
+    super.start()
+    val properties: Properties = new Properties
+    properties.load(new StringReader(kafkaProducerProperties))
+    val config: ProducerConfig = new ProducerConfig(properties)
+    producer = new Producer\[String, String](config)
+  }
 }</pre>
 
 ##### Kafka + Spark
