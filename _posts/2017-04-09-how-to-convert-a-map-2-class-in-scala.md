@@ -83,8 +83,7 @@ object Mappable {
       def toMap(t: $tpe) = Map(..$toMapParams)
       def fromMap(map: Map[String, Any]):$tpe = $companion(..$fromMapParams)
     }
-  """ }
- </pre>
+  """ }</pre>
 
 我们可以看到，其实宏就是在编译的时候把你返回的这个字段当成一段代码去编译，不管你想做什么，我们只要将其翻译成相应的字段并用q"""进行包装进行返回。
 
