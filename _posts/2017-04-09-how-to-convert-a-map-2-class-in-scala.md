@@ -12,7 +12,7 @@ tags:
 ---
 前段时间接触了scala的宏，相对C语言的**＃define**可以将其理解成一个更先进的版本，没多少实战经验的可以将其理解成一个复杂的查找替换工具，在每次编译前运行。从另一方面来讲，scala的宏可以给我们带来代码生成，字符串静态类型安全检测甚至允许创建流畅的DSL接口。
 
-##### 问题描述
+#### 问题描述
 
 对于我来讲，最有用的地方就是代码生成了。假设一种场景，将一个case class转成一个map，map的keys就是case class的参数，或者将一个map转成一个case class，map的keys就是case class的参数。这里还要同时感谢**implicit macros**。我们定义如下的一个特质来进行类型安全转换。
 
@@ -34,7 +34,7 @@ val PeopleMapper = new Mappable[People] {
 
 这个时候当case class发生了变化，我们也必须重写这个Mappable类，要不然编译器会捕捉到错误在fromMap这个方法中，但却不能捕捉到toMap。
 
-##### 引入宏
+#### 引入宏
 
 很明显每次针对不同的case class都要定义不同的Mappable让我们的代码看起来不是那么的**DRY**，理想的情况下，Mappable应该能感知到case class中定义的每个field而不是要我们显示在方法中列出来。事实证明宏可以让你做到这一点，让我们来定义一个基本的宏伴随这个Mappable特质。
 
@@ -57,7 +57,7 @@ object Mappable {
 
 上面可以理解成一个模板，那我们就下来要做的就是如何用代码替换掉上面的???
 
-##### 宏实现
+#### 宏实现
 
 * 获取字段
 
@@ -88,7 +88,7 @@ object Mappable {
 
 我们可以看到，其实宏就是在编译的时候把你返回的这个字段当成一段代码去编译，不管你想做什么，我们只要将其翻译成相应的字段并用q"""进行包装进行返回。
 
-##### Demo展示
+#### Demo展示
 
 <pre>val mapper = Mappable.materializeMappable[People]
 val p = People("bob.wang",12)
