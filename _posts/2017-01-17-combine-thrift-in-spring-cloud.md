@@ -12,7 +12,7 @@ tags:
 ---
 [thrift](http://thrift.apache.org/)是由[facebook](https://github.com/facebook)开源并贡献到[apache](http://www.apache.org/)的一款高效，支持多语言的远程服务调用框架，就像[gRPC](http://www.grpc.io/)，在前面的博文中有对其做一个简单的介绍，包括里面所包含的主要类型。
 
-近一年公司做架构改进，差不多都押宝在了[Spring Cloud](https://github.com/spring-cloud/)上面，但sc中不管三七二十一，统统利用HTTP协议进行服务间的调用，这在面向客户端的网关服务中还可以，但在网关跟其它所谓的内部服务间就想利用rpc来进行调用，由此产生了写一个[thirft-starter]([https://github.com/bobxwang/bbspring-thrift-starter](https://github.com/bobxwang/bbspring-thrift-starter))的想法。
+近一年公司做架构改进，差不多都押宝在了[Spring Cloud](https://github.com/spring-cloud/)上面，但sc中不管三七二十一，统统利用HTTP协议进行服务间的调用，这在面向客户端的网关服务中还可以，但在网关跟其它所谓的内部服务间就想利用rpc来进行调用，由此产生了写一个[thirft-spring-boot-starter](https://github.com/bobxwang/bbspring-thrift-starter)的想法。
 
 服务端利用thrift自带的TServlet，因此主要是添加注解类，仿照**RestController**添加**ThriftController**，然后服务起来后搜索所有的带此注解的类，利用TServlet添加到ServletContext中。
 
