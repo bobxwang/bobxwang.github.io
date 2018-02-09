@@ -19,19 +19,19 @@ tags:
 * 范畴(category)
 
 ##### 范畴
-> 我们可以简单的理解为函数 `f:Int=>String = ...`
+我们可以简单的理解为函数 `f:Int=>String = ...`
 * 一组对象
 * 一组态射(morphisms),态射会绑定两个对象,如f是对象A到B的态射,记作 `f:A->B`
 * 组合, 假设h是态射f跟g的组合,记作 `h = g o f`
 
 ##### 函子
-> 本质上范畴间的转换,如对范围 C, D, 函子F:C=>D, 将C中任意对象A转为D的F(A)
+本质上范畴间的转换,如对范围 C, D, 函子F:C=>D, 将C中任意对象A转为D的F(A)
 
 ##### 自函子
-> 是一种将范畴映射到自身的函子 
+是一种将范畴映射到自身的函子 
 
 ##### 群
-> 表示一个拥有封闭性,结合律,单位元,有逆元的二远运算代数结构 
+表示一个拥有封闭性,结合律,单位元,有逆元的二远运算代数结构 
 * 半群  只满足封闭性和结合律的群
 * 幺半群  在满足半群的同时还有一个单位元
 
@@ -48,7 +48,7 @@ tags:
 }</pre>
 
 ###### Functor的代码表示
-> [其实就是一个可以对包装过的值做处理的函数](https://github.com/bobxwang/scala-tour/blob/master/src/main/scala/com/bob/scalatour/fp/ffunc.scala)
+[其实就是一个可以对包装过的值做处理的函数](https://github.com/bobxwang/scala-tour/blob/master/src/main/scala/com/bob/scalatour/fp/ffunc.scala)
 <pre>trait Functor[F[_]] {
   def map[A,B](a:F[A])(f:A=>B):F[B]
 }</pre>
