@@ -35,7 +35,7 @@ Go 内存模型阐明了一个 Go 程序对某变量的写入, 如何才能确�
 
 > go 语句会在当前 Go 程开始执行前启动新的 Go 程
 
-```go
+```
 var a string
 func f() { print(a) }
 func hello() { 
@@ -48,7 +48,7 @@ func hello() {
 
 > 无法确保在程序中的任何事件发生之前退出
 
-```go
+```
 var a string 
 func hello() {
 	go func() { a = "hello" }
@@ -60,7 +60,7 @@ func hello() {
 
 > 是 Go 程之间进行同步的主要方法, 信道上的发送操作总在对应的接收操作完成前发生 
 
-```go
+```
 var c = make(chan int, 10)
 var a string
 func f() {
@@ -76,7 +76,7 @@ func main() {
 
 > 从无缓冲信道进行接收,要发生在对该信道进行的发送完成前 
 
-```go
+```
 var c = make(chan int)
 var a string
 func f() {
@@ -96,7 +96,7 @@ func main() {
 >
 > 对于任何 `sync.Mutex` 或 `sync.RWMutex` 类型的变量 `l` 以及 *n* < *m* ，对 `l.Unlock()` 的第 *n* 次调用在对 `l.Lock()` 的第 *m* 次调用返回前发生
 
-```go
+```
 var l sync.Mutex
 var s string
 func f() {
@@ -115,7 +115,7 @@ func main() {
 
 > `sync` 包通过 `Once` 类型为存在多个Go程的初始化提供了安全的机制, 多个线程可为特定的 `f` 执行 `once.Do(f)`, 但只有一个会运行 `f()`, 而其它调用会一直阻塞, 直到 `f()` 返回
 
-```go
+```
 var a string
 var once sync.Once
 var wg sync.WatiGroup
