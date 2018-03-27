@@ -35,33 +35,28 @@ Go 内存模型阐明了一个 Go 程序对某变量的写入, 如何才能确�
 
 > go 语句会在当前 Go 程开始执行前启动新的 Go 程
 
-```
-var a string
+<pre>var a string
 func f() { print(a) }
 func hello() { 
 	a = "hello"
   	go f()
-} // 调用 hello 或许会在将来的某一时刻打印出 "hello" (在 hello 返回之后则会打印空值 )
-```
+} // 调用 hello 或许会在将来的某一时刻打印出 "hello" (在 hello 返回之后则会打印空值 )</pre>
 
 ##### Go 程的销毁
 
 > 无法确保在程序中的任何事件发生之前退出
 
-```
-var a string 
+<pre>var a string 
 func hello() {
 	go func() { a = "hello" }
   	print(a)
-} // 对 a 赋值后并没有任何同步事件因此无法保证被其它任何go程检测到,实际上在这一个积极的编译器可能会删除整条 go 语句,若一个Go程的作用必须被另一个Go程监测到,需使用锁或信道通信之类的同步机制来建立顺序关系
-```
+} // 对 a 赋值后并没有任何同步事件因此无法保证被其它任何go程检测到,实际上在这一个积极的编译器可能会删除整条 go 语句,若一个Go程的作用必须被另一个Go程监测到,需使用锁或信道通信之类的同步机制来建立顺序关系</pre>
 
 ##### 信道通信 
 
 > 是 Go 程之间进行同步的主要方法, 信道上的发送操作总在对应的接收操作完成前发生 
 
-```
-var c = make(chan int, 10)
+<pre>var c = make(chan int, 10)
 var a string
 func f() {
   	a = "hello"
@@ -71,13 +66,11 @@ func main() {
   	go fo()
   	<- c
   	print(a)
-} // 可保证打印出"hello", 先对a进行写入,然后在c上发送信息,随后从c接收信号进行阻塞,最后打印出a 
-```
+} // 可保证打印出"hello", 先对a进行写入,然后在c上发送信息,随后从c接收信号进行阻塞,最后打印出a </pre>
 
 > 从无缓冲信道进行接收,要发生在对该信道进行的发送完成前 
 
-```
-var c = make(chan int)
+<pre>var c = make(chan int)
 var a string
 func f() {
   	a = "hello"
@@ -87,8 +80,7 @@ func main() {
   	go f()
   	c <- 0
   	print(a)
-} // 此写法一样可以保证打印出"hello", 但如果信道是带缓冲的,则不能保证(它可能会打印出空字符串,崩溃或做些别的事情) 
-```
+} // 此写法一样可以保证打印出"hello", 但如果信道是带缓冲的,则不能保证(它可能会打印出空字符串,崩溃或做些别的事情) </pre>
 
 ##### 锁
 
@@ -96,8 +88,7 @@ func main() {
 >
 > 对于任何 `sync.Mutex` 或 `sync.RWMutex` 类型的变量 `l` 以及 *n* < *m* ，对 `l.Unlock()` 的第 *n* 次调用在对 `l.Lock()` 的第 *m* 次调用返回前发生
 
-```
-var l sync.Mutex
+<pre>var l sync.Mutex
 var s string
 func f() {
   	a = "hello"
@@ -108,15 +99,13 @@ func main() {
   	go f() 
   	l.Lock()
   	print(a)
-} // 可保证打印出"hello"
-```
+} // 可保证打印出"hello"</pre>
 
 ##### Once
 
 > `sync` 包通过 `Once` 类型为存在多个Go程的初始化提供了安全的机制, 多个线程可为特定的 `f` 执行 `once.Do(f)`, 但只有一个会运行 `f()`, 而其它调用会一直阻塞, 直到 `f()` 返回
 
-```
-var a string
+<pre>var a string
 var once sync.Once
 var wg sync.WatiGroup
 func init() {
@@ -135,8 +124,7 @@ func main() {
 	go doprint()
 	go doprint()
 	wg.Wait()
-} // 可以看到会打印出两次 "hello", 但只会打印出一次 "run in setup func ..."
-```
+} // 可以看到会打印出两次 "hello", 但只会打印出一次 "run in setup func ..."</pre>
 
 ##### 错误的同步
 
