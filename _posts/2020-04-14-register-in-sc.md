@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "spring-cloud中服务自注册的相关类"
-date:   2019-04-14 20:17:59
+date:   2020-04-14 20:17:59
 categories: 
 - code 
 tags:
@@ -16,6 +16,6 @@ tags:
 - Self registration pattern
 - 3rd party registration pattern 
 
-下面我们用一个图，示例下Eureka或Nacos的相关Client包。
+下面我们用一个图，示例下Eureka或Nacos的相关类。
 
 ![Channel inherit tree](/media/pic/sc_register.png)
