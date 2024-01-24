@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>scala on Bob&#39;s Site</title>
+    <link>https://bobxwang.github.io/tags/scala/</link>
+    <description>Recent content in scala on Bob&#39;s Site</description>
+    <image>
+      <title>Bob&#39;s Site</title>
+      <url>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ch</language>
+    <lastBuildDate>Mon, 05 Jun 2017 20:17:59 +0000</lastBuildDate>
+    <atom:link href="https://bobxwang.github.io/tags/scala/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Monid/Functor的一点认识</title>
+      <link>https://bobxwang.github.io/2017/06/05/function-in-scala-md/</link>
+      <pubDate>Mon, 05 Jun 2017 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/2017/06/05/function-in-scala-md/</guid>
+      <description>一个单子(Monad)说白了不过就是自函子范畴上的一个幺半群, 此话出自Haskell大神 Philip Wadler. 在自学scala的过程中, 好几次尝试着去学习Mo</description>
+    </item>
+    <item>
+      <title>利用scala的宏达到map跟case class的互换</title>
+      <link>https://bobxwang.github.io/2017/04/09/how-to-convert-a-map-2-class-in-scala/</link>
+      <pubDate>Sun, 09 Apr 2017 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/2017/04/09/how-to-convert-a-map-2-class-in-scala/</guid>
+      <description>前段时间接触了scala的宏，相对C语言的 ＃define 可以将其理解成一个更先进的版本，没多少实战经验的可以将其理解成一个复杂的查找替换工具</description>
+    </item>
+    <item>
+      <title>Netflix Eureka 服务发现之手动注册</title>
+      <link>https://bobxwang.github.io/2016/04/03/custom-register-service-in-eureka/</link>
+      <pubDate>Sun, 03 Apr 2016 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/2016/04/03/custom-register-service-in-eureka/</guid>
+      <description>Eureka是netflix开源出来的一款服务发现注册框架，就像etcd，在前面关于SpringCloud的文章中有讲述，此文主要想讲下脱离</description>
+    </item>
+    <item>
+      <title>Spray框架之自定义权限验证</title>
+      <link>https://bobxwang.github.io/2015/08/03/custom-authenticator-in-spray/</link>
+      <pubDate>Mon, 03 Aug 2015 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/2015/08/03/custom-authenticator-in-spray/</guid>
+      <description>Spray内置了一此标准权限验证，像HttpBasicAuthenticator，然而如果我们需要一些其它的验证怎么办？在这篇文章里我们会谈</description>
+    </item>
+    <item>
+      <title>scala中的隐式转换</title>
+      <link>https://bobxwang.github.io/2014/04/01/the-keyword-implicit-in-scala/</link>
+      <pubDate>Tue, 01 Apr 2014 14:23:09 +0000</pubDate>
+      <guid>https://bobxwang.github.io/2014/04/01/the-keyword-implicit-in-scala/</guid>
+      <description>implicit 在scala中有一个关键字，implicit，就是我们这篇文章的主题。 先看一个简单的例子： def display(input:String) = println(input) 我们可以看到display函数的定义只接</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programmer-life on Bob&#39;s Site</title>
+    <link>https://bobxwang.github.io/tags/programmer-life/</link>
+    <description>Recent content in programmer-life on Bob&#39;s Site</description>
+    <image>
+      <title>Bob&#39;s Site</title>
+      <url>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ch</language>
+    <lastBuildDate>Thu, 26 Jul 2012 16:17:59 +0000</lastBuildDate>
+    <atom:link href="https://bobxwang.github.io/tags/programmer-life/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>谈谈C/S跟B/S系统开发中各自的关注点</title>
+      <link>https://bobxwang.github.io/2012/07/26/difference-between-cs-and-bs-system-develope/</link>
+      <pubDate>Thu, 26 Jul 2012 16:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/2012/07/26/difference-between-cs-and-bs-system-develope/</guid>
+      <description>何为B/S系统，个人理解就是用浏览器打开的应用都可以称之为B/S系统，常见的就是一些网站了。 在B/S系统中，个人认为技术人员的积累主要在以下</description>
+    </item>
+  </channel>
+</rss>

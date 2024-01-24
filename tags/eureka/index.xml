@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>eureka on Bob&#39;s Site</title>
+    <link>https://bobxwang.github.io/tags/eureka/</link>
+    <description>Recent content in eureka on Bob&#39;s Site</description>
+    <image>
+      <title>Bob&#39;s Site</title>
+      <url>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ch</language>
+    <lastBuildDate>Sun, 03 Apr 2016 20:17:59 +0000</lastBuildDate>
+    <atom:link href="https://bobxwang.github.io/tags/eureka/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Netflix Eureka 服务发现之手动注册</title>
+      <link>https://bobxwang.github.io/2016/04/03/custom-register-service-in-eureka/</link>
+      <pubDate>Sun, 03 Apr 2016 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/2016/04/03/custom-register-service-in-eureka/</guid>
+      <description>Eureka是netflix开源出来的一款服务发现注册框架，就像etcd，在前面关于SpringCloud的文章中有讲述，此文主要想讲下脱离</description>
+    </item>
+  </channel>
+</rss>

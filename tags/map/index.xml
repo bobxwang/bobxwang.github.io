@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>map on Bob&#39;s Site</title>
+    <link>https://bobxwang.github.io/tags/map/</link>
+    <description>Recent content in map on Bob&#39;s Site</description>
+    <image>
+      <title>Bob&#39;s Site</title>
+      <url>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ch</language>
+    <lastBuildDate>Mon, 05 Jun 2017 20:17:59 +0000</lastBuildDate>
+    <atom:link href="https://bobxwang.github.io/tags/map/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Monid/Functor的一点认识</title>
+      <link>https://bobxwang.github.io/2017/06/05/function-in-scala-md/</link>
+      <pubDate>Mon, 05 Jun 2017 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/2017/06/05/function-in-scala-md/</guid>
+      <description>一个单子(Monad)说白了不过就是自函子范畴上的一个幺半群, 此话出自Haskell大神 Philip Wadler. 在自学scala的过程中, 好几次尝试着去学习Mo</description>
+    </item>
+    <item>
+      <title>利用scala的宏达到map跟case class的互换</title>
+      <link>https://bobxwang.github.io/2017/04/09/how-to-convert-a-map-2-class-in-scala/</link>
+      <pubDate>Sun, 09 Apr 2017 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/2017/04/09/how-to-convert-a-map-2-class-in-scala/</guid>
+      <description>前段时间接触了scala的宏，相对C语言的 ＃define 可以将其理解成一个更先进的版本，没多少实战经验的可以将其理解成一个复杂的查找替换工具</description>
+    </item>
+  </channel>
+</rss>

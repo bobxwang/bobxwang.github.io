@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>api on Bob&#39;s Site</title>
+    <link>https://bobxwang.github.io/tags/api/</link>
+    <description>Recent content in api on Bob&#39;s Site</description>
+    <image>
+      <title>Bob&#39;s Site</title>
+      <url>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ch</language>
+    <lastBuildDate>Wed, 05 Sep 2012 14:17:59 +0000</lastBuildDate>
+    <atom:link href="https://bobxwang.github.io/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Asp.net Web Api中的Basic Authentication认证</title>
+      <link>https://bobxwang.github.io/2012/09/05/the-basic-authentication-in-asp.net-webapi/</link>
+      <pubDate>Wed, 05 Sep 2012 14:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/2012/09/05/the-basic-authentication-in-asp.net-webapi/</guid>
+      <description>在如今各种OPEN API数不胜数的年代，如何保证调用方是受信任的，考虑到大多数OPEN API都是基于HTTP协议，此系列打算就以Basic A</description>
+    </item>
+    <item>
+      <title>NET平台WEB开发中微软框架外的选择--Nancy</title>
+      <link>https://bobxwang.github.io/2012/03/10/another-select-in-net-web-develope-using-nancy/</link>
+      <pubDate>Sat, 10 Mar 2012 14:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/2012/03/10/another-select-in-net-web-develope-using-nancy/</guid>
+      <description>NET平台做B/S开发，常见的比较正统的就是webform跟mvc两个框架，webform把B/S开发本质HTTP协议封装的死死的，将win</description>
+    </item>
+  </channel>
+</rss>

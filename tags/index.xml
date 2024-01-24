@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Bob&#39;s Site</title>
+    <link>https://bobxwang.github.io/tags/</link>
+    <description>Recent content in Tags on Bob&#39;s Site</description>
+    <image>
+      <title>Bob&#39;s Site</title>
+      <url>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ch</language>
+    <lastBuildDate>Thu, 16 Apr 2020 20:17:59 +0000</lastBuildDate>
+    <atom:link href="https://bobxwang.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>discovery</title>
+      <link>https://bobxwang.github.io/tags/discovery/</link>
+      <pubDate>Thu, 16 Apr 2020 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/discovery/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>microservice</title>
+      <link>https://bobxwang.github.io/tags/microservice/</link>
+      <pubDate>Thu, 16 Apr 2020 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/microservice/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>springcloud</title>
+      <link>https://bobxwang.github.io/tags/springcloud/</link>
+      <pubDate>Thu, 16 Apr 2020 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/springcloud/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>registry</title>
+      <link>https://bobxwang.github.io/tags/registry/</link>
+      <pubDate>Tue, 14 Apr 2020 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/registry/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>go</title>
+      <link>https://bobxwang.github.io/tags/go/</link>
+      <pubDate>Sun, 25 Mar 2018 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>memory</title>
+      <link>https://bobxwang.github.io/tags/memory/</link>
+      <pubDate>Sun, 25 Mar 2018 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/memory/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>case class</title>
+      <link>https://bobxwang.github.io/tags/case-class/</link>
+      <pubDate>Mon, 05 Jun 2017 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/case-class/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>fp</title>
+      <link>https://bobxwang.github.io/tags/fp/</link>
+      <pubDate>Mon, 05 Jun 2017 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/fp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>map</title>
+      <link>https://bobxwang.github.io/tags/map/</link>
+      <pubDate>Mon, 05 Jun 2017 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/map/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>scala</title>
+      <link>https://bobxwang.github.io/tags/scala/</link>
+      <pubDate>Mon, 05 Jun 2017 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/scala/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>macros</title>
+      <link>https://bobxwang.github.io/tags/macros/</link>
+      <pubDate>Sun, 09 Apr 2017 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/macros/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>async</title>
+      <link>https://bobxwang.github.io/tags/async/</link>
+      <pubDate>Thu, 09 Feb 2017 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/async/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>callable</title>
+      <link>https://bobxwang.github.io/tags/callable/</link>
+      <pubDate>Thu, 09 Feb 2017 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/callable/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>defferedresult</title>
+      <link>https://bobxwang.github.io/tags/defferedresult/</link>
+      <pubDate>Thu, 09 Feb 2017 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/defferedresult/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>rxjava</title>
+      <link>https://bobxwang.github.io/tags/rxjava/</link>
+      <pubDate>Thu, 09 Feb 2017 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/rxjava/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>springmvc</title>
+      <link>https://bobxwang.github.io/tags/springmvc/</link>
+      <pubDate>Thu, 09 Feb 2017 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/springmvc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>sleuth</title>
+      <link>https://bobxwang.github.io/tags/sleuth/</link>
+      <pubDate>Tue, 17 Jan 2017 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/sleuth/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>spring cloud</title>
+      <link>https://bobxwang.github.io/tags/spring-cloud/</link>
+      <pubDate>Tue, 17 Jan 2017 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/spring-cloud/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>thrift</title>
+      <link>https://bobxwang.github.io/tags/thrift/</link>
+      <pubDate>Tue, 17 Jan 2017 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/thrift/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>kafka</title>
+      <link>https://bobxwang.github.io/tags/kafka/</link>
+      <pubDate>Tue, 05 Jul 2016 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/kafka/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>logback</title>
+      <link>https://bobxwang.github.io/tags/logback/</link>
+      <pubDate>Tue, 05 Jul 2016 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/logback/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>spark</title>
+      <link>https://bobxwang.github.io/tags/spark/</link>
+      <pubDate>Tue, 05 Jul 2016 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/spark/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>eureka</title>
+      <link>https://bobxwang.github.io/tags/eureka/</link>
+      <pubDate>Sun, 03 Apr 2016 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/eureka/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>finatra</title>
+      <link>https://bobxwang.github.io/tags/finatra/</link>
+      <pubDate>Sun, 03 Apr 2016 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/finatra/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>spray</title>
+      <link>https://bobxwang.github.io/tags/spray/</link>
+      <pubDate>Mon, 03 Aug 2015 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/spray/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>netflix</title>
+      <link>https://bobxwang.github.io/tags/netflix/</link>
+      <pubDate>Fri, 05 Jun 2015 14:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/netflix/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>mysql</title>
+      <link>https://bobxwang.github.io/tags/mysql/</link>
+      <pubDate>Wed, 14 May 2014 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/mysql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>python</title>
+      <link>https://bobxwang.github.io/tags/python/</link>
+      <pubDate>Wed, 14 May 2014 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>extensions method</title>
+      <link>https://bobxwang.github.io/tags/extensions-method/</link>
+      <pubDate>Tue, 01 Apr 2014 14:23:09 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/extensions-method/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>implicit</title>
+      <link>https://bobxwang.github.io/tags/implicit/</link>
+      <pubDate>Tue, 01 Apr 2014 14:23:09 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/implicit/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>bigdata</title>
+      <link>https://bobxwang.github.io/tags/bigdata/</link>
+      <pubDate>Sun, 05 Jan 2014 14:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/bigdata/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>asp.net webapi</title>
+      <link>https://bobxwang.github.io/tags/asp.net-webapi/</link>
+      <pubDate>Wed, 09 Oct 2013 14:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/asp.net-webapi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>spring rest</title>
+      <link>https://bobxwang.github.io/tags/spring-rest/</link>
+      <pubDate>Wed, 09 Oct 2013 14:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/spring-rest/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>c#</title>
+      <link>https://bobxwang.github.io/tags/c#/</link>
+      <pubDate>Wed, 16 Jan 2013 14:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/c#/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>java</title>
+      <link>https://bobxwang.github.io/tags/java/</link>
+      <pubDate>Tue, 15 Jan 2013 14:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Netty</title>
+      <link>https://bobxwang.github.io/tags/netty/</link>
+      <pubDate>Tue, 15 Jan 2013 14:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/netty/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>api</title>
+      <link>https://bobxwang.github.io/tags/api/</link>
+      <pubDate>Wed, 05 Sep 2012 14:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/api/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>programmer-life</title>
+      <link>https://bobxwang.github.io/tags/programmer-life/</link>
+      <pubDate>Thu, 26 Jul 2012 16:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/programmer-life/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>obj-c</title>
+      <link>https://bobxwang.github.io/tags/obj-c/</link>
+      <pubDate>Mon, 16 Apr 2012 16:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/obj-c/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>web</title>
+      <link>https://bobxwang.github.io/tags/web/</link>
+      <pubDate>Sat, 05 Jun 2010 12:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/web/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>django</title>
+      <link>https://bobxwang.github.io/tags/django/</link>
+      <pubDate>Sat, 08 May 2010 14:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/tags/django/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

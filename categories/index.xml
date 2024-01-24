@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Bob&#39;s Site</title>
+    <link>https://bobxwang.github.io/categories/</link>
+    <description>Recent content in Categories on Bob&#39;s Site</description>
+    <image>
+      <title>Bob&#39;s Site</title>
+      <url>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ch</language>
+    <lastBuildDate>Thu, 16 Apr 2020 20:17:59 +0000</lastBuildDate>
+    <atom:link href="https://bobxwang.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>code</title>
+      <link>https://bobxwang.github.io/categories/code/</link>
+      <pubDate>Thu, 16 Apr 2020 20:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/categories/code/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>programmer-life</title>
+      <link>https://bobxwang.github.io/categories/programmer-life/</link>
+      <pubDate>Thu, 26 Jul 2012 16:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/categories/programmer-life/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

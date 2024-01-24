@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>obj-c on Bob&#39;s Site</title>
+    <link>https://bobxwang.github.io/tags/obj-c/</link>
+    <description>Recent content in obj-c on Bob&#39;s Site</description>
+    <image>
+      <title>Bob&#39;s Site</title>
+      <url>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ch</language>
+    <lastBuildDate>Mon, 16 Apr 2012 16:17:59 +0000</lastBuildDate>
+    <atom:link href="https://bobxwang.github.io/tags/obj-c/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>苹果应用不同状态切换时的处理</title>
+      <link>https://bobxwang.github.io/2012/04/16/how-to-add-logic-when-lifestatus-changed-in-iphone/</link>
+      <pubDate>Mon, 16 Apr 2012 16:17:59 +0000</pubDate>
+      <guid>https://bobxwang.github.io/2012/04/16/how-to-add-logic-when-lifestatus-changed-in-iphone/</guid>
+      <description>iphone 应用不同状态切换时回调的方法 application:didFinishLaunching:WithOptions: applicationDidBecomeActive: applicationWillEnterForeground: applicationWillResignActive: applicationDidEnterBackground: applicationWillTerminate: application:didChangeStatusBarFrame: UIApplicationDidReceiveMemoryWarningNotification: iphone 应用的几个状态 Not running:程序完全没有执行。 Inactive:程序在前景执行但是停止接</description>
+    </item>
+  </channel>
+</rss>
