@@ -15,9 +15,9 @@
     <atom:link href="https://bobxwang.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Netty框架中的几个核心概念</title>
-      <link>https://bobxwang.github.io/2013/01/15/basis-knowledeg-in-netty/</link>
+      <link>https://bobxwang.github.io/posts/basis-knowledeg-in-netty/</link>
       <pubDate>Tue, 15 Jan 2013 14:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/2013/01/15/basis-knowledeg-in-netty/</guid>
+      <guid>https://bobxwang.github.io/posts/basis-knowledeg-in-netty/</guid>
       <description>Netty 在java世界中是一个非常知名的通迅框架，目前最新版本应该是5.x,不过3.x版本相对来讲在业界用的比较广泛，主要是从4.x版本开始重写了</description>
     </item>
   </channel>

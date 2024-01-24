@@ -15,9 +15,9 @@
     <atom:link href="https://bobxwang.github.io/tags/fp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Monid/Functor的一点认识</title>
-      <link>https://bobxwang.github.io/2017/06/05/function-in-scala-md/</link>
+      <link>https://bobxwang.github.io/posts/function-in-scala-md/</link>
       <pubDate>Mon, 05 Jun 2017 20:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/2017/06/05/function-in-scala-md/</guid>
+      <guid>https://bobxwang.github.io/posts/function-in-scala-md/</guid>
       <description>一个单子(Monad)说白了不过就是自函子范畴上的一个幺半群, 此话出自Haskell大神 Philip Wadler. 在自学scala的过程中, 好几次尝试着去学习Mo</description>
     </item>
   </channel>

@@ -15,9 +15,9 @@
     <atom:link href="https://bobxwang.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WEB开发中需要知道的缓存知识</title>
-      <link>https://bobxwang.github.io/2010/06/05/the-basic-cache-knowledge-in-http/</link>
+      <link>https://bobxwang.github.io/posts/the-basic-cache-knowledge-in-http/</link>
       <pubDate>Sat, 05 Jun 2010 12:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/2010/06/05/the-basic-cache-knowledge-in-http/</guid>
+      <guid>https://bobxwang.github.io/posts/the-basic-cache-knowledge-in-http/</guid>
       <description>WEB缓存游走于服务器和客户端间，服务器数量可能是1个或多个，客户端也可能是1个或多个，使用缓存的2个主要原因： 降低延迟：缓存离客户端更近，</description>
     </item>
   </channel>

@@ -20,7 +20,7 @@
     <loc>https://bobxwang.github.io/posts/</loc>
     <lastmod>2020-04-16T20:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2020/04/16/discovery-in-sc/</loc>
+    <loc>https://bobxwang.github.io/posts/discovery-in-sc/</loc>
     <lastmod>2020-04-16T20:17:59+00:00</lastmod>
   </url><url>
     <loc>https://bobxwang.github.io/tags/springcloud/</loc>
@@ -32,13 +32,13 @@
     <loc>https://bobxwang.github.io/tags/registry/</loc>
     <lastmod>2020-04-14T20:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2020/04/14/register-in-sc/</loc>
+    <loc>https://bobxwang.github.io/posts/register-in-sc/</loc>
     <lastmod>2020-04-14T20:17:59+00:00</lastmod>
   </url><url>
     <loc>https://bobxwang.github.io/tags/go/</loc>
     <lastmod>2018-03-25T20:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2018/03/25/memory-in-go/</loc>
+    <loc>https://bobxwang.github.io/posts/memory-in-go/</loc>
     <lastmod>2018-03-25T20:17:59+00:00</lastmod>
   </url><url>
     <loc>https://bobxwang.github.io/tags/memory/</loc>
@@ -53,7 +53,7 @@
     <loc>https://bobxwang.github.io/tags/map/</loc>
     <lastmod>2017-06-05T20:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2017/06/05/function-in-scala-md/</loc>
+    <loc>https://bobxwang.github.io/posts/function-in-scala-md/</loc>
     <lastmod>2017-06-05T20:17:59+00:00</lastmod>
   </url><url>
     <loc>https://bobxwang.github.io/tags/scala/</loc>
@@ -62,7 +62,7 @@
     <loc>https://bobxwang.github.io/tags/macros/</loc>
     <lastmod>2017-04-09T20:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2017/04/09/how-to-convert-a-map-2-class-in-scala/</loc>
+    <loc>https://bobxwang.github.io/posts/how-to-convert-a-map-2-class-in-scala/</loc>
     <lastmod>2017-04-09T20:17:59+00:00</lastmod>
   </url><url>
     <loc>https://bobxwang.github.io/tags/async/</loc>
@@ -80,10 +80,10 @@
     <loc>https://bobxwang.github.io/tags/springmvc/</loc>
     <lastmod>2017-02-09T20:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/how-to-deliver-mdcvalue-when-spring-return-callable:deferred:rxjava/</loc>
+    <loc>https://bobxwang.github.io/posts/how-to-deliver-mdcvalue-when-spring-return-callabledeferredrxjava/</loc>
     <lastmod>2017-02-09T20:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/combilne-rxjava-in-spring-mvc/</loc>
+    <loc>https://bobxwang.github.io/posts/combilne-rxjava-in-spring-mvc/</loc>
     <lastmod>2017-02-06T20:17:59+00:00</lastmod>
   </url><url>
     <loc>https://bobxwang.github.io/tags/sleuth/</loc>
@@ -95,7 +95,7 @@
     <loc>https://bobxwang.github.io/tags/thrift/</loc>
     <lastmod>2017-01-17T20:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2017/01/17/combine-thrift-in-spring-cloud/</loc>
+    <loc>https://bobxwang.github.io/posts/combine-thrift-in-spring-cloud/</loc>
     <lastmod>2017-01-17T20:17:59+00:00</lastmod>
   </url><url>
     <loc>https://bobxwang.github.io/tags/kafka/</loc>
@@ -107,7 +107,7 @@
     <loc>https://bobxwang.github.io/tags/spark/</loc>
     <lastmod>2016-07-05T20:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2016/07/05/combine-logback-kafka-spark/</loc>
+    <loc>https://bobxwang.github.io/posts/combine-logback-kafka-spark/</loc>
     <lastmod>2016-07-05T20:17:59+00:00</lastmod>
   </url><url>
     <loc>https://bobxwang.github.io/tags/eureka/</loc>
@@ -116,22 +116,22 @@
     <loc>https://bobxwang.github.io/tags/finatra/</loc>
     <lastmod>2016-04-03T20:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2016/04/03/custom-register-service-in-eureka/</loc>
+    <loc>https://bobxwang.github.io/posts/custom-register-service-in-eureka/</loc>
     <lastmod>2016-04-03T20:17:59+00:00</lastmod>
   </url><url>
     <loc>https://bobxwang.github.io/tags/spray/</loc>
     <lastmod>2015-08-03T20:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2015/08/03/custom-authenticator-in-spray/</loc>
+    <loc>https://bobxwang.github.io/posts/custom-authenticator-in-spray/</loc>
     <lastmod>2015-08-03T20:17:59+00:00</lastmod>
   </url><url>
     <loc>https://bobxwang.github.io/tags/netflix/</loc>
     <lastmod>2015-06-05T14:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2015/06/05/basic-knlowledge-in-spring-cloud/</loc>
+    <loc>https://bobxwang.github.io/posts/basic-knlowledge-in-spring-cloud/</loc>
     <lastmod>2015-06-05T14:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2015/02/03/main-class-info-in-thrift/</loc>
+    <loc>https://bobxwang.github.io/posts/main-class-info-in-thrift/</loc>
     <lastmod>2015-02-03T20:17:59+00:00</lastmod>
   </url><url>
     <loc>https://bobxwang.github.io/tags/mysql/</loc>
@@ -140,7 +140,7 @@
     <loc>https://bobxwang.github.io/tags/python/</loc>
     <lastmod>2014-05-14T20:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2014/05/14/using-mysql-in-djangoonepointsix-and-pythonthreepointfour/</loc>
+    <loc>https://bobxwang.github.io/posts/using-mysql-in-djangoonepointsix-and-pythonthreepointfour/</loc>
     <lastmod>2014-05-14T20:17:59+00:00</lastmod>
   </url><url>
     <loc>https://bobxwang.github.io/tags/extensions-method/</loc>
@@ -149,19 +149,19 @@
     <loc>https://bobxwang.github.io/tags/implicit/</loc>
     <lastmod>2014-04-01T14:23:09+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2014/04/01/the-keyword-implicit-in-scala/</loc>
+    <loc>https://bobxwang.github.io/posts/the-keyword-implicit-in-scala/</loc>
     <lastmod>2014-04-01T14:23:09+00:00</lastmod>
   </url><url>
     <loc>https://bobxwang.github.io/tags/bigdata/</loc>
     <lastmod>2014-01-05T14:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2014/01/05/the-basic-concept-of-spark/</loc>
+    <loc>https://bobxwang.github.io/posts/the-basic-concept-of-spark/</loc>
     <lastmod>2014-01-05T14:17:59+00:00</lastmod>
   </url><url>
     <loc>https://bobxwang.github.io/tags/asp.net-webapi/</loc>
     <lastmod>2013-10-09T14:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2013/10/09/compare-the-aspwebapi-with-spring-rest/</loc>
+    <loc>https://bobxwang.github.io/posts/compare-the-aspwebapi-with-spring-rest/</loc>
     <lastmod>2013-10-09T14:17:59+00:00</lastmod>
   </url><url>
     <loc>https://bobxwang.github.io/tags/spring-rest/</loc>
@@ -170,7 +170,7 @@
     <loc>https://bobxwang.github.io/tags/c#/</loc>
     <lastmod>2013-01-16T14:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2013/01/16/the-library-common-used-in-net/</loc>
+    <loc>https://bobxwang.github.io/posts/the-library-common-used-in-net/</loc>
     <lastmod>2013-01-16T14:17:59+00:00</lastmod>
   </url><url>
     <loc>https://bobxwang.github.io/tags/java/</loc>
@@ -179,13 +179,13 @@
     <loc>https://bobxwang.github.io/tags/netty/</loc>
     <lastmod>2013-01-15T14:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2013/01/15/basis-knowledeg-in-netty/</loc>
+    <loc>https://bobxwang.github.io/posts/basis-knowledeg-in-netty/</loc>
     <lastmod>2013-01-15T14:17:59+00:00</lastmod>
   </url><url>
     <loc>https://bobxwang.github.io/tags/api/</loc>
     <lastmod>2012-09-05T14:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2012/09/05/the-basic-authentication-in-asp.net-webapi/</loc>
+    <loc>https://bobxwang.github.io/posts/the-basic-authentication-in-asp.net-webapi/</loc>
     <lastmod>2012-09-05T14:17:59+00:00</lastmod>
   </url><url>
     <loc>https://bobxwang.github.io/tags/programmer-life/</loc>
@@ -194,44 +194,44 @@
     <loc>https://bobxwang.github.io/categories/programmer-life/</loc>
     <lastmod>2012-07-26T16:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2012/07/26/difference-between-cs-and-bs-system-develope/</loc>
+    <loc>https://bobxwang.github.io/posts/difference-between-cs-and-bs-system-develope/</loc>
     <lastmod>2012-07-26T16:17:59+00:00</lastmod>
   </url><url>
     <loc>https://bobxwang.github.io/tags/obj-c/</loc>
     <lastmod>2012-04-16T16:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2012/04/16/how-to-add-logic-when-lifestatus-changed-in-iphone/</loc>
+    <loc>https://bobxwang.github.io/posts/how-to-add-logic-when-lifestatus-changed-in-iphone/</loc>
     <lastmod>2012-04-16T16:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2012/03/10/another-select-in-net-web-develope-using-nancy/</loc>
+    <loc>https://bobxwang.github.io/posts/another-select-in-net-web-develope-using-nancy/</loc>
     <lastmod>2012-03-10T14:17:59+00:00</lastmod>
   </url><url>
     <loc>https://bobxwang.github.io/tags/web/</loc>
     <lastmod>2010-06-05T12:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2010/06/05/the-basic-cache-knowledge-in-http/</loc>
+    <loc>https://bobxwang.github.io/posts/the-basic-cache-knowledge-in-http/</loc>
     <lastmod>2010-06-05T12:17:59+00:00</lastmod>
   </url><url>
     <loc>https://bobxwang.github.io/tags/django/</loc>
     <lastmod>2010-05-08T14:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2010/05/08/the-form-basic-knowledge-in-django/</loc>
+    <loc>https://bobxwang.github.io/posts/the-form-basic-knowledge-in-django/</loc>
     <lastmod>2010-05-08T14:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2010/05/05/the-route-basic-knowledge-in-django/</loc>
+    <loc>https://bobxwang.github.io/posts/the-route-basic-knowledge-in-django/</loc>
     <lastmod>2010-05-05T14:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2010/05/03/the-model-basic-knowledge-in-django/</loc>
+    <loc>https://bobxwang.github.io/posts/the-model-basic-knowledge-in-django/</loc>
     <lastmod>2010-05-03T14:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2010/04/03/how-add-self-logic-in-webrequest-before-or-after-in-webpy/</loc>
+    <loc>https://bobxwang.github.io/posts/how-add-self-logic-in-webrequest-before-or-after-in-webpy/</loc>
     <lastmod>2010-04-03T16:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2010/04/02/the-basic-decorator-pattern-in-python/</loc>
+    <loc>https://bobxwang.github.io/posts/the-basic-decorator-pattern-in-python/</loc>
     <lastmod>2010-04-02T14:17:59+00:00</lastmod>
   </url><url>
-    <loc>https://bobxwang.github.io/2010/04/01/the-basic-knowledge-in-python/</loc>
-    <lastmod>2010-04-01T14:17:59+00:00</lastmod>
+    <loc>https://bobxwang.github.io/posts/the-basic-knowledge-in-python/</loc>
+    <lastmod>2010-04-01T16:59:33+08:00</lastmod>
   </url><url>
     <loc>https://bobxwang.github.io/archives/</loc>
   </url><url>

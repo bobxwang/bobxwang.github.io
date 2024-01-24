@@ -15,9 +15,9 @@
     <atom:link href="https://bobxwang.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GoLang内存模型</title>
-      <link>https://bobxwang.github.io/2018/03/25/memory-in-go/</link>
+      <link>https://bobxwang.github.io/posts/memory-in-go/</link>
       <pubDate>Sun, 25 Mar 2018 20:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/2018/03/25/memory-in-go/</guid>
+      <guid>https://bobxwang.github.io/posts/memory-in-go/</guid>
       <description>Go 内存模型阐明了一个Go程序对某变量的写入, 如何才能确保另一个读取该变量的Go程序监测到 忠告 程序在修改被多个Go程序同时访问的数据时必须序列</description>
     </item>
   </channel>

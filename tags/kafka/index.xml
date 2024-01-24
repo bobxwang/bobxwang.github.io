@@ -15,9 +15,9 @@
     <atom:link href="https://bobxwang.github.io/tags/kafka/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>日志监控整合LogBack&#43;Kafka&#43;Spark</title>
-      <link>https://bobxwang.github.io/2016/07/05/combine-logback-kafka-spark/</link>
+      <link>https://bobxwang.github.io/posts/combine-logback-kafka-spark/</link>
       <pubDate>Tue, 05 Jul 2016 20:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/2016/07/05/combine-logback-kafka-spark/</guid>
+      <guid>https://bobxwang.github.io/posts/combine-logback-kafka-spark/</guid>
       <description>kafka是linkedin开发并开源出来的一个分布式MQ系统，现在是Apache的一个顶级项目。spark是一个加州大学伯克利分校的AMP</description>
     </item>
   </channel>

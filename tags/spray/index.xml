@@ -15,9 +15,9 @@
     <atom:link href="https://bobxwang.github.io/tags/spray/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spray框架之自定义权限验证</title>
-      <link>https://bobxwang.github.io/2015/08/03/custom-authenticator-in-spray/</link>
+      <link>https://bobxwang.github.io/posts/custom-authenticator-in-spray/</link>
       <pubDate>Mon, 03 Aug 2015 20:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/2015/08/03/custom-authenticator-in-spray/</guid>
+      <guid>https://bobxwang.github.io/posts/custom-authenticator-in-spray/</guid>
       <description>Spray内置了一此标准权限验证，像HttpBasicAuthenticator，然而如果我们需要一些其它的验证怎么办？在这篇文章里我们会谈</description>
     </item>
   </channel>

@@ -15,16 +15,16 @@
     <atom:link href="https://bobxwang.github.io/tags/thrift/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>整合thrift到spring cloud</title>
-      <link>https://bobxwang.github.io/2017/01/17/combine-thrift-in-spring-cloud/</link>
+      <link>https://bobxwang.github.io/posts/combine-thrift-in-spring-cloud/</link>
       <pubDate>Tue, 17 Jan 2017 20:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/2017/01/17/combine-thrift-in-spring-cloud/</guid>
+      <guid>https://bobxwang.github.io/posts/combine-thrift-in-spring-cloud/</guid>
       <description>thrift是由facebook开源并贡献到apache的一款高效，支持多语言的远程服务调用框架，就像gRPC，在前面的博文中有对其做一个简</description>
     </item>
     <item>
       <title>Apache Thrift 基本类信息</title>
-      <link>https://bobxwang.github.io/2015/02/03/main-class-info-in-thrift/</link>
+      <link>https://bobxwang.github.io/posts/main-class-info-in-thrift/</link>
       <pubDate>Tue, 03 Feb 2015 20:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/2015/02/03/main-class-info-in-thrift/</guid>
+      <guid>https://bobxwang.github.io/posts/main-class-info-in-thrift/</guid>
       <description>thrift最初是由Facebook开发并贡献出来的一款PRC库，可以进行跨语言的开发。 主要类 TProtocol 定义传输的是什么内容,客户服务端通过约定的协</description>
     </item>
   </channel>
