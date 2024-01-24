@@ -1,8 +1,0 @@
-markdown: kramdown
-permalink: /:categories/:title/
-url: http://sevenz.github.io
-author: bob 
-safe: true
-paginate: 16
-LANG: en_US.UTF-8
-LC_ALL: en_US.UTF-8
