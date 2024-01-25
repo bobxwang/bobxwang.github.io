@@ -15,9 +15,9 @@
     <atom:link href="https://bobxwang.github.io/tags/programmer-life/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>谈谈C/S跟B/S系统开发中各自的关注点</title>
-      <link>https://bobxwang.github.io/posts/difference-between-cs-and-bs-system-develope/</link>
+      <link>https://bobxwang.github.io/posts/difference-between-cs-and-bs-develope/</link>
       <pubDate>Thu, 26 Jul 2012 16:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/difference-between-cs-and-bs-system-develope/</guid>
+      <guid>https://bobxwang.github.io/posts/difference-between-cs-and-bs-develope/</guid>
       <description>何为B/S系统，个人理解就是用浏览器打开的应用都可以称之为B/S系统，常见的就是一些网站了。 在B/S系统中，个人认为技术人员的积累主要在以下</description>
     </item>
   </channel>

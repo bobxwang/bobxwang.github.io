@@ -22,9 +22,9 @@
     </item>
     <item>
       <title>Spark随谈--基础概念</title>
-      <link>https://bobxwang.github.io/posts/the-basic-concept-of-spark/</link>
+      <link>https://bobxwang.github.io/posts/basic-concept-of-spark/</link>
       <pubDate>Sun, 05 Jan 2014 14:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/the-basic-concept-of-spark/</guid>
+      <guid>https://bobxwang.github.io/posts/basic-concept-of-spark/</guid>
       <description>Application:基于Spark的用户程序，包含了一个driver program和集群中多个executor Driver Program:运行Ap</description>
     </item>
   </channel>

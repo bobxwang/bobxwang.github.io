@@ -36,30 +36,30 @@
     </item>
     <item>
       <title>Monid/Functor的一点认识</title>
-      <link>https://bobxwang.github.io/posts/function-in-scala-md/</link>
+      <link>https://bobxwang.github.io/posts/function-in-scala/</link>
       <pubDate>Mon, 05 Jun 2017 20:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/function-in-scala-md/</guid>
+      <guid>https://bobxwang.github.io/posts/function-in-scala/</guid>
       <description>一个单子(Monad)说白了不过就是自函子范畴上的一个幺半群, 此话出自Haskell大神 Philip Wadler. 在自学scala的过程中, 好几次尝试着去学习Mo</description>
     </item>
     <item>
       <title>利用scala的宏达到map跟case class的互换</title>
-      <link>https://bobxwang.github.io/posts/how-to-convert-a-map-2-class-in-scala/</link>
+      <link>https://bobxwang.github.io/posts/convert-map-2-class-in-scala/</link>
       <pubDate>Sun, 09 Apr 2017 20:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/how-to-convert-a-map-2-class-in-scala/</guid>
+      <guid>https://bobxwang.github.io/posts/convert-map-2-class-in-scala/</guid>
       <description>前段时间接触了scala的宏，相对C语言的 ＃define 可以将其理解成一个更先进的版本，没多少实战经验的可以将其理解成一个复杂的查找替换工具</description>
     </item>
     <item>
       <title>Spring异步返回时如何将线程值由请求线程传递到工作线程</title>
-      <link>https://bobxwang.github.io/posts/how-to-deliver-mdcvalue-when-spring-return-callabledeferredrxjava/</link>
+      <link>https://bobxwang.github.io/posts/deliver-mdcvalue-when-spring-return-callabledeferredrxjava/</link>
       <pubDate>Thu, 09 Feb 2017 20:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/how-to-deliver-mdcvalue-when-spring-return-callabledeferredrxjava/</guid>
+      <guid>https://bobxwang.github.io/posts/deliver-mdcvalue-when-spring-return-callabledeferredrxjava/</guid>
       <description>自从servlet3.0后，可以利用 AsyncContext 来进行异步处理，释放请求线程。在spring中随后也推出了 WebAsyncTask 跟 DeferredResult 来简化程序的编写，这个在上文将rxja</description>
     </item>
     <item>
       <title>改造SpringMVC使其支持返回rx.Observable的类型</title>
-      <link>https://bobxwang.github.io/posts/combilne-rxjava-in-spring-mvc/</link>
+      <link>https://bobxwang.github.io/posts/combine-rxjava-in-spring-mvc/</link>
       <pubDate>Mon, 06 Feb 2017 20:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/combilne-rxjava-in-spring-mvc/</guid>
+      <guid>https://bobxwang.github.io/posts/combine-rxjava-in-spring-mvc/</guid>
       <description>rxjava是netflix开源出来的一款响应式编程类库，是Reactive Extensions(Rx)在jvm平台上的一个实现，是一个集成</description>
     </item>
     <item>
@@ -99,44 +99,44 @@
     </item>
     <item>
       <title>Apache Thrift 基本类信息</title>
-      <link>https://bobxwang.github.io/posts/main-class-info-in-thrift/</link>
+      <link>https://bobxwang.github.io/posts/basic-class-info-in-thrift/</link>
       <pubDate>Tue, 03 Feb 2015 20:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/main-class-info-in-thrift/</guid>
+      <guid>https://bobxwang.github.io/posts/basic-class-info-in-thrift/</guid>
       <description>thrift最初是由Facebook开发并贡献出来的一款PRC库，可以进行跨语言的开发。 主要类 TProtocol 定义传输的是什么内容,客户服务端通过约定的协</description>
     </item>
     <item>
       <title>如何在Django1.6结合Python3.4版本中使用MySql</title>
-      <link>https://bobxwang.github.io/posts/using-mysql-in-djangoonepointsix-and-pythonthreepointfour/</link>
+      <link>https://bobxwang.github.io/posts/mysql-in-djangoonepointsix-and-pythonthreepointfour/</link>
       <pubDate>Wed, 14 May 2014 20:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/using-mysql-in-djangoonepointsix-and-pythonthreepointfour/</guid>
+      <guid>https://bobxwang.github.io/posts/mysql-in-djangoonepointsix-and-pythonthreepointfour/</guid>
       <description>最近赶下新潮，用起了Python3.4跟Django1.6，数据库依然是MySql。 悲剧的是在Python2.7时代连接MySql的MySQ</description>
     </item>
     <item>
       <title>scala中的隐式转换</title>
-      <link>https://bobxwang.github.io/posts/the-keyword-implicit-in-scala/</link>
+      <link>https://bobxwang.github.io/posts/implicit-keyword-in-scala/</link>
       <pubDate>Tue, 01 Apr 2014 14:23:09 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/the-keyword-implicit-in-scala/</guid>
+      <guid>https://bobxwang.github.io/posts/implicit-keyword-in-scala/</guid>
       <description>implicit 在scala中有一个关键字，implicit，就是我们这篇文章的主题。 先看一个简单的例子： def display(input:String) = println(input) 我们可以看到display函数的定义只接</description>
     </item>
     <item>
       <title>Spark随谈--基础概念</title>
-      <link>https://bobxwang.github.io/posts/the-basic-concept-of-spark/</link>
+      <link>https://bobxwang.github.io/posts/basic-concept-of-spark/</link>
       <pubDate>Sun, 05 Jan 2014 14:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/the-basic-concept-of-spark/</guid>
+      <guid>https://bobxwang.github.io/posts/basic-concept-of-spark/</guid>
       <description>Application:基于Spark的用户程序，包含了一个driver program和集群中多个executor Driver Program:运行Ap</description>
     </item>
     <item>
       <title>Asp.Net WebApi跟Spring Rest的Controller对比</title>
-      <link>https://bobxwang.github.io/posts/compare-the-aspwebapi-with-spring-rest/</link>
+      <link>https://bobxwang.github.io/posts/compare-the-webapi-with-springrest/</link>
       <pubDate>Wed, 09 Oct 2013 14:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/compare-the-aspwebapi-with-spring-rest/</guid>
+      <guid>https://bobxwang.github.io/posts/compare-the-webapi-with-springrest/</guid>
       <description>自从11年底接触Asp.net Web Api开始到现在转眼也快三年了，做个日志对比下开源框架Spring Rest。 Asp.net Web Api Controller Select &amp;amp;&amp;amp; Spring Rest Controller Select 众所周知，H</description>
     </item>
     <item>
       <title>个人认为NET平台开发不可缺少的几个库</title>
-      <link>https://bobxwang.github.io/posts/the-library-common-used-in-net/</link>
+      <link>https://bobxwang.github.io/posts/basic-library-used-in-net/</link>
       <pubDate>Wed, 16 Jan 2013 14:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/the-library-common-used-in-net/</guid>
+      <guid>https://bobxwang.github.io/posts/basic-library-used-in-net/</guid>
       <description>下面罗列一些个人认为NET平台开发不可缺少的几个库。 ORM NHibernate Dapper Simple.Data IOC/DI Spring.NET StructureMap Autofac Object Mapper EmitMapper ValueInjecter AutoMapper 其它 Redis Client Json.NET Service.Text Jil</description>
     </item>
     <item>
@@ -148,16 +148,16 @@
     </item>
     <item>
       <title>Asp.net Web Api中的Basic Authentication认证</title>
-      <link>https://bobxwang.github.io/posts/the-basic-authentication-in-asp.net-webapi/</link>
+      <link>https://bobxwang.github.io/posts/basic-authentication-in-webapi/</link>
       <pubDate>Wed, 05 Sep 2012 14:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/the-basic-authentication-in-asp.net-webapi/</guid>
+      <guid>https://bobxwang.github.io/posts/basic-authentication-in-webapi/</guid>
       <description>在如今各种OPEN API数不胜数的年代，如何保证调用方是受信任的，考虑到大多数OPEN API都是基于HTTP协议，此系列打算就以Basic A</description>
     </item>
     <item>
       <title>苹果应用不同状态切换时的处理</title>
-      <link>https://bobxwang.github.io/posts/how-to-add-logic-when-lifestatus-changed-in-iphone/</link>
+      <link>https://bobxwang.github.io/posts/add-logic-when-lifestatus-changed-in-iphone/</link>
       <pubDate>Mon, 16 Apr 2012 16:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/how-to-add-logic-when-lifestatus-changed-in-iphone/</guid>
+      <guid>https://bobxwang.github.io/posts/add-logic-when-lifestatus-changed-in-iphone/</guid>
       <description>iphone 应用不同状态切换时回调的方法 application:didFinishLaunching:WithOptions: applicationDidBecomeActive: applicationWillEnterForeground: applicationWillResignActive: applicationDidEnterBackground: applicationWillTerminate: application:didChangeStatusBarFrame: UIApplicationDidReceiveMemoryWarningNotification: iphone 应用的几个状态 Not running:程序完全没有执行。 Inactive:程序在前景执行但是停止接</description>
     </item>
     <item>
@@ -169,51 +169,51 @@
     </item>
     <item>
       <title>WEB开发中需要知道的缓存知识</title>
-      <link>https://bobxwang.github.io/posts/the-basic-cache-knowledge-in-http/</link>
+      <link>https://bobxwang.github.io/posts/basic-cache-knowledge-in-http/</link>
       <pubDate>Sat, 05 Jun 2010 12:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/the-basic-cache-knowledge-in-http/</guid>
+      <guid>https://bobxwang.github.io/posts/basic-cache-knowledge-in-http/</guid>
       <description>WEB缓存游走于服务器和客户端间，服务器数量可能是1个或多个，客户端也可能是1个或多个，使用缓存的2个主要原因： 降低延迟：缓存离客户端更近，</description>
     </item>
     <item>
       <title>Django中表单基本知识</title>
-      <link>https://bobxwang.github.io/posts/the-form-basic-knowledge-in-django/</link>
+      <link>https://bobxwang.github.io/posts/form-basic-knowledge-in-django/</link>
       <pubDate>Sat, 08 May 2010 14:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/the-form-basic-knowledge-in-django/</guid>
+      <guid>https://bobxwang.github.io/posts/form-basic-knowledge-in-django/</guid>
       <description>Form基本物件 from django import forms class ContactForm(forms.Form): subject = forms.CharField(max_lenth=100) sender = forms.EmailField() 在View中使用Form from django.shortcuts import render from django.http import HttpResponseRedirect from django.core.urlresolvers import reverse def contact(request): if request.method == &amp;#39;POST&amp;#39;: from = ContactForm(request.POST) if form.is_valid(): subject = form.cleaned_data[&amp;#39;subject&amp;#39;] sender = form.cleaned_data[&amp;#39;sender&amp;#39;] #according this data to change db or other logic</description>
     </item>
     <item>
       <title>Django路由配置基本知识</title>
-      <link>https://bobxwang.github.io/posts/the-route-basic-knowledge-in-django/</link>
+      <link>https://bobxwang.github.io/posts/basic-knowledge-route-in-django/</link>
       <pubDate>Wed, 05 May 2010 14:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/the-route-basic-knowledge-in-django/</guid>
+      <guid>https://bobxwang.github.io/posts/basic-knowledge-route-in-django/</guid>
       <description>命名路由参数 vs. 非命名路由参数 如果匹配到命名路由，则优先选用，忽略掉非命名路由. 把所有参数都传递到非命名路由中. 所有参数捕获的值都是字符串 给V</description>
     </item>
     <item>
       <title>Django的Model基础知识</title>
-      <link>https://bobxwang.github.io/posts/the-model-basic-knowledge-in-django/</link>
+      <link>https://bobxwang.github.io/posts/basic-knowledge-model-in-django/</link>
       <pubDate>Mon, 03 May 2010 14:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/the-model-basic-knowledge-in-django/</guid>
+      <guid>https://bobxwang.github.io/posts/basic-knowledge-model-in-django/</guid>
       <description>Django中的Model层，负责的是跟数据库表间的映射，同是也是一个ORM。数据库表间关系无非三种，Django中都做了很好的支持。下面是</description>
     </item>
     <item>
       <title>如何在web.py处理请求前后添加自己的逻辑</title>
-      <link>https://bobxwang.github.io/posts/how-add-self-logic-in-webrequest-before-or-after-in-webpy/</link>
+      <link>https://bobxwang.github.io/posts/add-logic-in-webrequest-before-or-after-in-webpy/</link>
       <pubDate>Sat, 03 Apr 2010 16:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/how-add-self-logic-in-webrequest-before-or-after-in-webpy/</guid>
+      <guid>https://bobxwang.github.io/posts/add-logic-in-webrequest-before-or-after-in-webpy/</guid>
       <description>web.py在python百花齐放的web开发框架中，可谓是一个简单却功能强大的轻量级框架，麻雀虽小，五脏俱全。 一般在web应用中常见的可能</description>
     </item>
     <item>
       <title>Python中的装饰器模式</title>
-      <link>https://bobxwang.github.io/posts/the-basic-decorator-pattern-in-python/</link>
+      <link>https://bobxwang.github.io/posts/basic-decorator-pattern-in-python/</link>
       <pubDate>Fri, 02 Apr 2010 14:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/the-basic-decorator-pattern-in-python/</guid>
+      <guid>https://bobxwang.github.io/posts/basic-decorator-pattern-in-python/</guid>
       <description>装饰器使得函数和方法的封装(接收一个函数并返回增加版本的一个函数)更加容易和理解。 下面就是一个最简单的装饰器 def mydecorator(function): def _mydecorator(*args,**kw): #实际调用前处理 res = function(*args,**kw) #</description>
     </item>
     <item>
       <title>Python基础知识</title>
-      <link>https://bobxwang.github.io/posts/the-basic-knowledge-in-python/</link>
+      <link>https://bobxwang.github.io/posts/basic-knowledge-in-python/</link>
       <pubDate>Thu, 01 Apr 2010 16:59:33 +0800</pubDate>
-      <guid>https://bobxwang.github.io/posts/the-basic-knowledge-in-python/</guid>
+      <guid>https://bobxwang.github.io/posts/basic-knowledge-in-python/</guid>
       <description>下面罗列一些Python的基础知识。 # -- coding: utf-8 -- people = 30 cars = 40 buses = 15 #相当于c中的？：运算符 print (&amp;#39;cars &amp;gt; buses&amp;#39; if (cars &amp;gt; buses) else &amp;#39;cars &amp;lt; buses&amp;#39;) #判断&amp;#39;yes&amp;#3</description>
     </item>
   </channel>

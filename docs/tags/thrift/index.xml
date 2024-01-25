@@ -22,9 +22,9 @@
     </item>
     <item>
       <title>Apache Thrift 基本类信息</title>
-      <link>https://bobxwang.github.io/posts/main-class-info-in-thrift/</link>
+      <link>https://bobxwang.github.io/posts/basic-class-info-in-thrift/</link>
       <pubDate>Tue, 03 Feb 2015 20:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/main-class-info-in-thrift/</guid>
+      <guid>https://bobxwang.github.io/posts/basic-class-info-in-thrift/</guid>
       <description>thrift最初是由Facebook开发并贡献出来的一款PRC库，可以进行跨语言的开发。 主要类 TProtocol 定义传输的是什么内容,客户服务端通过约定的协</description>
     </item>
   </channel>

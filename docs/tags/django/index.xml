@@ -15,23 +15,23 @@
     <atom:link href="https://bobxwang.github.io/tags/django/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Django中表单基本知识</title>
-      <link>https://bobxwang.github.io/posts/the-form-basic-knowledge-in-django/</link>
+      <link>https://bobxwang.github.io/posts/form-basic-knowledge-in-django/</link>
       <pubDate>Sat, 08 May 2010 14:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/the-form-basic-knowledge-in-django/</guid>
+      <guid>https://bobxwang.github.io/posts/form-basic-knowledge-in-django/</guid>
       <description>Form基本物件 from django import forms class ContactForm(forms.Form): subject = forms.CharField(max_lenth=100) sender = forms.EmailField() 在View中使用Form from django.shortcuts import render from django.http import HttpResponseRedirect from django.core.urlresolvers import reverse def contact(request): if request.method == &amp;#39;POST&amp;#39;: from = ContactForm(request.POST) if form.is_valid(): subject = form.cleaned_data[&amp;#39;subject&amp;#39;] sender = form.cleaned_data[&amp;#39;sender&amp;#39;] #according this data to change db or other logic</description>
     </item>
     <item>
       <title>Django路由配置基本知识</title>
-      <link>https://bobxwang.github.io/posts/the-route-basic-knowledge-in-django/</link>
+      <link>https://bobxwang.github.io/posts/basic-knowledge-route-in-django/</link>
       <pubDate>Wed, 05 May 2010 14:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/the-route-basic-knowledge-in-django/</guid>
+      <guid>https://bobxwang.github.io/posts/basic-knowledge-route-in-django/</guid>
       <description>命名路由参数 vs. 非命名路由参数 如果匹配到命名路由，则优先选用，忽略掉非命名路由. 把所有参数都传递到非命名路由中. 所有参数捕获的值都是字符串 给V</description>
     </item>
     <item>
       <title>Django的Model基础知识</title>
-      <link>https://bobxwang.github.io/posts/the-model-basic-knowledge-in-django/</link>
+      <link>https://bobxwang.github.io/posts/basic-knowledge-model-in-django/</link>
       <pubDate>Mon, 03 May 2010 14:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/the-model-basic-knowledge-in-django/</guid>
+      <guid>https://bobxwang.github.io/posts/basic-knowledge-model-in-django/</guid>
       <description>Django中的Model层，负责的是跟数据库表间的映射，同是也是一个ORM。数据库表间关系无非三种，Django中都做了很好的支持。下面是</description>
     </item>
   </channel>

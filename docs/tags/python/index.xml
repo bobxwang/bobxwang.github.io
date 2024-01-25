@@ -15,51 +15,51 @@
     <atom:link href="https://bobxwang.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何在Django1.6结合Python3.4版本中使用MySql</title>
-      <link>https://bobxwang.github.io/posts/using-mysql-in-djangoonepointsix-and-pythonthreepointfour/</link>
+      <link>https://bobxwang.github.io/posts/mysql-in-djangoonepointsix-and-pythonthreepointfour/</link>
       <pubDate>Wed, 14 May 2014 20:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/using-mysql-in-djangoonepointsix-and-pythonthreepointfour/</guid>
+      <guid>https://bobxwang.github.io/posts/mysql-in-djangoonepointsix-and-pythonthreepointfour/</guid>
       <description>最近赶下新潮，用起了Python3.4跟Django1.6，数据库依然是MySql。 悲剧的是在Python2.7时代连接MySql的MySQ</description>
     </item>
     <item>
       <title>Django中表单基本知识</title>
-      <link>https://bobxwang.github.io/posts/the-form-basic-knowledge-in-django/</link>
+      <link>https://bobxwang.github.io/posts/form-basic-knowledge-in-django/</link>
       <pubDate>Sat, 08 May 2010 14:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/the-form-basic-knowledge-in-django/</guid>
+      <guid>https://bobxwang.github.io/posts/form-basic-knowledge-in-django/</guid>
       <description>Form基本物件 from django import forms class ContactForm(forms.Form): subject = forms.CharField(max_lenth=100) sender = forms.EmailField() 在View中使用Form from django.shortcuts import render from django.http import HttpResponseRedirect from django.core.urlresolvers import reverse def contact(request): if request.method == &amp;#39;POST&amp;#39;: from = ContactForm(request.POST) if form.is_valid(): subject = form.cleaned_data[&amp;#39;subject&amp;#39;] sender = form.cleaned_data[&amp;#39;sender&amp;#39;] #according this data to change db or other logic</description>
     </item>
     <item>
       <title>Django路由配置基本知识</title>
-      <link>https://bobxwang.github.io/posts/the-route-basic-knowledge-in-django/</link>
+      <link>https://bobxwang.github.io/posts/basic-knowledge-route-in-django/</link>
       <pubDate>Wed, 05 May 2010 14:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/the-route-basic-knowledge-in-django/</guid>
+      <guid>https://bobxwang.github.io/posts/basic-knowledge-route-in-django/</guid>
       <description>命名路由参数 vs. 非命名路由参数 如果匹配到命名路由，则优先选用，忽略掉非命名路由. 把所有参数都传递到非命名路由中. 所有参数捕获的值都是字符串 给V</description>
     </item>
     <item>
       <title>Django的Model基础知识</title>
-      <link>https://bobxwang.github.io/posts/the-model-basic-knowledge-in-django/</link>
+      <link>https://bobxwang.github.io/posts/basic-knowledge-model-in-django/</link>
       <pubDate>Mon, 03 May 2010 14:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/the-model-basic-knowledge-in-django/</guid>
+      <guid>https://bobxwang.github.io/posts/basic-knowledge-model-in-django/</guid>
       <description>Django中的Model层，负责的是跟数据库表间的映射，同是也是一个ORM。数据库表间关系无非三种，Django中都做了很好的支持。下面是</description>
     </item>
     <item>
       <title>如何在web.py处理请求前后添加自己的逻辑</title>
-      <link>https://bobxwang.github.io/posts/how-add-self-logic-in-webrequest-before-or-after-in-webpy/</link>
+      <link>https://bobxwang.github.io/posts/add-logic-in-webrequest-before-or-after-in-webpy/</link>
       <pubDate>Sat, 03 Apr 2010 16:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/how-add-self-logic-in-webrequest-before-or-after-in-webpy/</guid>
+      <guid>https://bobxwang.github.io/posts/add-logic-in-webrequest-before-or-after-in-webpy/</guid>
       <description>web.py在python百花齐放的web开发框架中，可谓是一个简单却功能强大的轻量级框架，麻雀虽小，五脏俱全。 一般在web应用中常见的可能</description>
     </item>
     <item>
       <title>Python中的装饰器模式</title>
-      <link>https://bobxwang.github.io/posts/the-basic-decorator-pattern-in-python/</link>
+      <link>https://bobxwang.github.io/posts/basic-decorator-pattern-in-python/</link>
       <pubDate>Fri, 02 Apr 2010 14:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/the-basic-decorator-pattern-in-python/</guid>
+      <guid>https://bobxwang.github.io/posts/basic-decorator-pattern-in-python/</guid>
       <description>装饰器使得函数和方法的封装(接收一个函数并返回增加版本的一个函数)更加容易和理解。 下面就是一个最简单的装饰器 def mydecorator(function): def _mydecorator(*args,**kw): #实际调用前处理 res = function(*args,**kw) #</description>
     </item>
     <item>
       <title>Python基础知识</title>
-      <link>https://bobxwang.github.io/posts/the-basic-knowledge-in-python/</link>
+      <link>https://bobxwang.github.io/posts/basic-knowledge-in-python/</link>
       <pubDate>Thu, 01 Apr 2010 16:59:33 +0800</pubDate>
-      <guid>https://bobxwang.github.io/posts/the-basic-knowledge-in-python/</guid>
+      <guid>https://bobxwang.github.io/posts/basic-knowledge-in-python/</guid>
       <description>下面罗列一些Python的基础知识。 # -- coding: utf-8 -- people = 30 cars = 40 buses = 15 #相当于c中的？：运算符 print (&amp;#39;cars &amp;gt; buses&amp;#39; if (cars &amp;gt; buses) else &amp;#39;cars &amp;lt; buses&amp;#39;) #判断&amp;#39;yes&amp;#3</description>
     </item>
   </channel>

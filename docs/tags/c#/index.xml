@@ -15,16 +15,16 @@
     <atom:link href="https://bobxwang.github.io/tags/c#/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>个人认为NET平台开发不可缺少的几个库</title>
-      <link>https://bobxwang.github.io/posts/the-library-common-used-in-net/</link>
+      <link>https://bobxwang.github.io/posts/basic-library-used-in-net/</link>
       <pubDate>Wed, 16 Jan 2013 14:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/the-library-common-used-in-net/</guid>
+      <guid>https://bobxwang.github.io/posts/basic-library-used-in-net/</guid>
       <description>下面罗列一些个人认为NET平台开发不可缺少的几个库。 ORM NHibernate Dapper Simple.Data IOC/DI Spring.NET StructureMap Autofac Object Mapper EmitMapper ValueInjecter AutoMapper 其它 Redis Client Json.NET Service.Text Jil</description>
     </item>
     <item>
       <title>Asp.net Web Api中的Basic Authentication认证</title>
-      <link>https://bobxwang.github.io/posts/the-basic-authentication-in-asp.net-webapi/</link>
+      <link>https://bobxwang.github.io/posts/basic-authentication-in-webapi/</link>
       <pubDate>Wed, 05 Sep 2012 14:17:59 +0000</pubDate>
-      <guid>https://bobxwang.github.io/posts/the-basic-authentication-in-asp.net-webapi/</guid>
+      <guid>https://bobxwang.github.io/posts/basic-authentication-in-webapi/</guid>
       <description>在如今各种OPEN API数不胜数的年代，如何保证调用方是受信任的，考虑到大多数OPEN API都是基于HTTP协议，此系列打算就以Basic A</description>
     </item>
     <item>
