@@ -4,14 +4,19 @@
     <title>asp.net webapi on Bob&#39;s Site</title>
     <link>https://bobxwang.github.io/tags/asp.net-webapi/</link>
     <description>Recent content in asp.net webapi on Bob&#39;s Site</description>
+    <image>
+      <title>Bob&#39;s Site</title>
+      <url>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ch</language>
-    <lastBuildDate>Wed, 09 Oct 2013 14:17:59 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Oct 2013 12:09:04 +0800</lastBuildDate>
     <atom:link href="https://bobxwang.github.io/tags/asp.net-webapi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Asp.Net WebApi跟Spring Rest的Controller对比</title>
       <link>https://bobxwang.github.io/posts/compare-the-webapi-with-springrest/</link>
-      <pubDate>Wed, 09 Oct 2013 14:17:59 +0000</pubDate>
+      <pubDate>Wed, 09 Oct 2013 12:09:04 +0800</pubDate>
       <guid>https://bobxwang.github.io/posts/compare-the-webapi-with-springrest/</guid>
       <description>自从11年底接触Asp.net Web Api开始到现在转眼也快三年了，做个日志对比下开源框架Spring Rest。 Asp.net Web Api Controller Select &amp;amp;&amp;amp; Spring Rest Controller Select 众所周知，H</description>
     </item>

@@ -4,14 +4,19 @@
     <title>finatra on Bob&#39;s Site</title>
     <link>https://bobxwang.github.io/tags/finatra/</link>
     <description>Recent content in finatra on Bob&#39;s Site</description>
+    <image>
+      <title>Bob&#39;s Site</title>
+      <url>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ch</language>
-    <lastBuildDate>Sun, 03 Apr 2016 20:17:59 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Apr 2016 12:09:04 +0800</lastBuildDate>
     <atom:link href="https://bobxwang.github.io/tags/finatra/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Netflix Eureka 服务发现之手动注册</title>
       <link>https://bobxwang.github.io/posts/custom-register-service-in-eureka/</link>
-      <pubDate>Sun, 03 Apr 2016 20:17:59 +0000</pubDate>
+      <pubDate>Sun, 03 Apr 2016 12:09:04 +0800</pubDate>
       <guid>https://bobxwang.github.io/posts/custom-register-service-in-eureka/</guid>
       <description>Eureka是netflix开源出来的一款服务发现注册框架，就像etcd，在前面关于SpringCloud的文章中有讲述，此文主要想讲下脱离</description>
     </item>

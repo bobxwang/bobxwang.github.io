@@ -4,21 +4,26 @@
     <title>spark on Bob&#39;s Site</title>
     <link>https://bobxwang.github.io/tags/spark/</link>
     <description>Recent content in spark on Bob&#39;s Site</description>
+    <image>
+      <title>Bob&#39;s Site</title>
+      <url>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ch</language>
-    <lastBuildDate>Tue, 05 Jul 2016 20:17:59 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 Jul 2016 12:09:04 +0800</lastBuildDate>
     <atom:link href="https://bobxwang.github.io/tags/spark/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>日志监控整合LogBack&#43;Kafka&#43;Spark</title>
       <link>https://bobxwang.github.io/posts/combine-logback-kafka-spark/</link>
-      <pubDate>Tue, 05 Jul 2016 20:17:59 +0000</pubDate>
+      <pubDate>Tue, 05 Jul 2016 12:09:04 +0800</pubDate>
       <guid>https://bobxwang.github.io/posts/combine-logback-kafka-spark/</guid>
       <description>kafka是linkedin开发并开源出来的一个分布式MQ系统，现在是Apache的一个顶级项目。spark是一个加州大学伯克利分校的AMP</description>
     </item>
     <item>
       <title>Spark随谈--基础概念</title>
       <link>https://bobxwang.github.io/posts/basic-concept-of-spark/</link>
-      <pubDate>Sun, 05 Jan 2014 14:17:59 +0000</pubDate>
+      <pubDate>Sun, 05 Jan 2014 12:09:04 +0800</pubDate>
       <guid>https://bobxwang.github.io/posts/basic-concept-of-spark/</guid>
       <description>Application:基于Spark的用户程序，包含了一个driver program和集群中多个executor Driver Program:运行Ap</description>
     </item>

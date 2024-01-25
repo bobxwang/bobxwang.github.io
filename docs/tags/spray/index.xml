@@ -4,14 +4,19 @@
     <title>spray on Bob&#39;s Site</title>
     <link>https://bobxwang.github.io/tags/spray/</link>
     <description>Recent content in spray on Bob&#39;s Site</description>
+    <image>
+      <title>Bob&#39;s Site</title>
+      <url>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ch</language>
-    <lastBuildDate>Mon, 03 Aug 2015 20:17:59 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Aug 2015 12:09:04 +0800</lastBuildDate>
     <atom:link href="https://bobxwang.github.io/tags/spray/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spray框架之自定义权限验证</title>
       <link>https://bobxwang.github.io/posts/custom-authenticator-in-spray/</link>
-      <pubDate>Mon, 03 Aug 2015 20:17:59 +0000</pubDate>
+      <pubDate>Mon, 03 Aug 2015 12:09:04 +0800</pubDate>
       <guid>https://bobxwang.github.io/posts/custom-authenticator-in-spray/</guid>
       <description>Spray内置了一此标准权限验证，像HttpBasicAuthenticator，然而如果我们需要一些其它的验证怎么办？在这篇文章里我们会谈</description>
     </item>

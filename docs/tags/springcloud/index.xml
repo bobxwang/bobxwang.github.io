@@ -4,28 +4,33 @@
     <title>springcloud on Bob&#39;s Site</title>
     <link>https://bobxwang.github.io/tags/springcloud/</link>
     <description>Recent content in springcloud on Bob&#39;s Site</description>
+    <image>
+      <title>Bob&#39;s Site</title>
+      <url>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ch</language>
-    <lastBuildDate>Thu, 16 Apr 2020 20:17:59 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Apr 2020 12:09:04 +0800</lastBuildDate>
     <atom:link href="https://bobxwang.github.io/tags/springcloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>spring-cloud中服务发现相关的类</title>
       <link>https://bobxwang.github.io/posts/discovery-in-sc/</link>
-      <pubDate>Thu, 16 Apr 2020 20:17:59 +0000</pubDate>
+      <pubDate>Thu, 16 Apr 2020 12:09:04 +0800</pubDate>
       <guid>https://bobxwang.github.io/posts/discovery-in-sc/</guid>
       <description>服务拆分后离不开服务间的调用，那么怎么确定你要调用的一个服务，它所在的地址呢。 一般来讲这里涉及到服务发现，常见的有如下几种方案。 Client-side discovery Server-side discovery 在S</description>
     </item>
     <item>
       <title>spring-cloud中服务自注册的相关类</title>
       <link>https://bobxwang.github.io/posts/register-in-sc/</link>
-      <pubDate>Tue, 14 Apr 2020 20:17:59 +0000</pubDate>
+      <pubDate>Tue, 14 Apr 2020 12:09:04 +0800</pubDate>
       <guid>https://bobxwang.github.io/posts/register-in-sc/</guid>
       <description>服务拆分后离不开注册，要不然就得手工维护每个实例所在的地址以及监听的端口，当服务一多，手工维护肯定不现实。 一般来讲有两种选择。 Self registration pattern 3rd party registration pattern</description>
     </item>
     <item>
       <title>Spring Cloud--基础概念</title>
       <link>https://bobxwang.github.io/posts/basic-knlowledge-in-spring-cloud/</link>
-      <pubDate>Fri, 05 Jun 2015 14:17:59 +0000</pubDate>
+      <pubDate>Fri, 05 Jun 2015 12:09:04 +0800</pubDate>
       <guid>https://bobxwang.github.io/posts/basic-knlowledge-in-spring-cloud/</guid>
       <description>当今微服务在博客，社交媒体或会议演讲中获得越来越多关注，同时社区中也有不少怀疑论者，认为其并不是很新东西，而是对SOA架构的重新包装。然而微</description>
     </item>

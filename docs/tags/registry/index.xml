@@ -4,14 +4,19 @@
     <title>registry on Bob&#39;s Site</title>
     <link>https://bobxwang.github.io/tags/registry/</link>
     <description>Recent content in registry on Bob&#39;s Site</description>
+    <image>
+      <title>Bob&#39;s Site</title>
+      <url>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ch</language>
-    <lastBuildDate>Tue, 14 Apr 2020 20:17:59 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2020 12:09:04 +0800</lastBuildDate>
     <atom:link href="https://bobxwang.github.io/tags/registry/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>spring-cloud中服务自注册的相关类</title>
       <link>https://bobxwang.github.io/posts/register-in-sc/</link>
-      <pubDate>Tue, 14 Apr 2020 20:17:59 +0000</pubDate>
+      <pubDate>Tue, 14 Apr 2020 12:09:04 +0800</pubDate>
       <guid>https://bobxwang.github.io/posts/register-in-sc/</guid>
       <description>服务拆分后离不开注册，要不然就得手工维护每个实例所在的地址以及监听的端口，当服务一多，手工维护肯定不现实。 一般来讲有两种选择。 Self registration pattern 3rd party registration pattern</description>
     </item>

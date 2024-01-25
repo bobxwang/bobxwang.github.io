@@ -4,14 +4,19 @@
     <title>discovery on Bob&#39;s Site</title>
     <link>https://bobxwang.github.io/tags/discovery/</link>
     <description>Recent content in discovery on Bob&#39;s Site</description>
+    <image>
+      <title>Bob&#39;s Site</title>
+      <url>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ch</language>
-    <lastBuildDate>Thu, 16 Apr 2020 20:17:59 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Apr 2020 12:09:04 +0800</lastBuildDate>
     <atom:link href="https://bobxwang.github.io/tags/discovery/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>spring-cloud中服务发现相关的类</title>
       <link>https://bobxwang.github.io/posts/discovery-in-sc/</link>
-      <pubDate>Thu, 16 Apr 2020 20:17:59 +0000</pubDate>
+      <pubDate>Thu, 16 Apr 2020 12:09:04 +0800</pubDate>
       <guid>https://bobxwang.github.io/posts/discovery-in-sc/</guid>
       <description>服务拆分后离不开服务间的调用，那么怎么确定你要调用的一个服务，它所在的地址呢。 一般来讲这里涉及到服务发现，常见的有如下几种方案。 Client-side discovery Server-side discovery 在S</description>
     </item>
