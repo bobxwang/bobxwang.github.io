@@ -4,11 +4,6 @@
     <title>Bob&#39;s Site</title>
     <link>https://bobxwang.github.io/</link>
     <description>Recent content on Bob&#39;s Site</description>
-    <image>
-      <title>Bob&#39;s Site</title>
-      <url>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://bobxwang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ch</language>
     <lastBuildDate>Thu, 16 Apr 2020 20:17:59 +0000</lastBuildDate>
@@ -222,6 +217,20 @@
       <pubDate>Thu, 01 Apr 2010 16:59:33 +0800</pubDate>
       <guid>https://bobxwang.github.io/posts/basic-knowledge-in-python/</guid>
       <description>下面罗列一些Python的基础知识。 # -- coding: utf-8 -- people = 30 cars = 40 buses = 15 #相当于c中的？：运算符 print (&amp;#39;cars &amp;gt; buses&amp;#39; if (cars &amp;gt; buses) else &amp;#39;cars &amp;lt; buses&amp;#39;) #判断&amp;#39;yes&amp;#3</description>
+    </item>
+    <item>
+      <title>Archives</title>
+      <link>https://bobxwang.github.io/archives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://bobxwang.github.io/archives/</guid>
+      <description>archives</description>
+    </item>
+    <item>
+      <title>Search</title>
+      <link>https://bobxwang.github.io/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://bobxwang.github.io/search/</guid>
+      <description></description>
     </item>
     <item>
       <title>关于本人</title>
